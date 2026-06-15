@@ -58,11 +58,12 @@ export function SearchCommand({
         />
         {query && (
           <button
+            type="button"
             onClick={() => {
               setQuery("");
               setOpen(false);
             }}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+            className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer text-slate-400 hover:text-york-red"
             aria-label="Clear search"
           >
             <X className="h-4 w-4" />
@@ -93,7 +94,7 @@ export function SearchCommand({
                         setOpen(false);
                         setQuery("");
                       }}
-                      className="flex w-full flex-col gap-1 px-4 py-3 text-left transition hover:bg-slate-50"
+                      className="flex w-full cursor-pointer flex-col gap-1 px-4 py-3 text-left transition hover:bg-york-red/5"
                     >
                       <span className="text-sm font-semibold text-navy">{formula.title}</span>
                       <span className="text-xs text-slate-500">

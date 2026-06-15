@@ -23,8 +23,9 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
           {index > 0 && <ChevronRight className="h-3.5 w-3.5 text-slate-300" />}
           {item.onClick ? (
             <button
+              type="button"
               onClick={item.onClick}
-              className="rounded-md px-1.5 py-0.5 text-slate-500 transition hover:bg-slate-100 hover:text-york-red"
+              className="cursor-pointer rounded-md px-1.5 py-0.5 text-slate-500 transition hover:bg-york-red/5 hover:text-york-red"
             >
               {item.label}
             </button>

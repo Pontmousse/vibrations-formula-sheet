@@ -5,6 +5,7 @@ import { X, BookOpen, AlertCircle, Lightbulb, Link2, Calculator } from "lucide-r
 import { useState } from "react";
 import type { FormulaEntry } from "@/data/formulas";
 import { getFormulaById } from "@/data/formulas";
+import { showSourceMetadata } from "@/lib/features";
 import { cn } from "@/lib/utils";
 import { Math } from "./Math";
 
@@ -43,7 +44,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-40 bg-navy/30 backdrop-blur-sm"
+            className="fixed inset-0 z-40 cursor-pointer bg-navy/30 backdrop-blur-sm"
           />
 
           <motion.aside
@@ -62,8 +63,9 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                   <h2 className="mt-1 text-xl font-bold text-navy">{formula.title}</h2>
                 </div>
                 <button
+                  type="button"
                   onClick={onClose}
-                  className="rounded-lg p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+                  className="cursor-pointer rounded-lg p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
                   aria-label="Close"
                 >
                   <X className="h-5 w-5" />
@@ -82,9 +84,10 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                   return (
                     <button
                       key={tab.id}
+                      type="button"
                       onClick={() => setActiveTab(tab.id)}
                       className={cn(
-                        "flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium transition",
+                        "flex shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium transition",
                         activeTab === tab.id
                           ? "bg-york-red text-white"
                           : "text-slate-600 hover:bg-slate-100",
@@ -102,9 +105,9 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
               {activeTab === "meaning" && (
                 <div className="space-y-4">
                   <p className="text-sm leading-relaxed text-slate-700">{formula.explanation}</p>
-                  {formula.source && (
-                    <div className="rounded-xl border border-slate-100 bg-slate-50 p-4 text-sm text-slate-600">
-                      <p className="font-medium text-navy">Source metadata</p>
+                  {showSourceMetadata && formula.source && (
+                    <div className="rounded-xl border border-amber-100 bg-amber-50 p-4 text-sm text-slate-600">
+                      <p className="font-medium text-navy">Source metadata (dev only)</p>
                       <ul className="mt-2 space-y-1">
                         {formula.source.map((s, i) => (
                           <li key={i}>
@@ -214,8 +217,9 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                     relatedFormulas.map((related) => (
                       <button
                         key={related.id}
+                        type="button"
                         onClick={() => onSelectRelated(related)}
-                        className="w-full rounded-xl border border-slate-200 p-4 text-left transition hover:border-york-red/30 hover:bg-slate-50"
+                        className="w-full cursor-pointer rounded-xl border border-slate-200 p-4 text-left transition hover:border-york-red/30 hover:bg-york-red/5"
                       >
                         <p className="font-medium text-navy">{related.title}</p>
                         <div className="mt-2 text-sm">

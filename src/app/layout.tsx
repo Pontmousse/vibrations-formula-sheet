@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { assetPath } from "@/lib/features";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,6 +17,11 @@ export const metadata: Metadata = {
   title: "MECH 4502 Vibrations Formula Navigator",
   description:
     "Explore MECH 4502 Vibrations formulas by topic, concept, assumptions, and problem type.",
+  icons: {
+    icon: assetPath("/favicon.svg"),
+    shortcut: assetPath("/favicon.svg"),
+    apple: assetPath("/favicon.svg"),
+  },
 };
 
 export default function RootLayout({

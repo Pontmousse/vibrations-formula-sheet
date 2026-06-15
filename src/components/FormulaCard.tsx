@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, AlertTriangle, BookMarked } from "lucide-react";
 import type { FormulaEntry } from "@/data/formulas";
+import { showSourceMetadata } from "@/lib/features";
 import { cn } from "@/lib/utils";
 import { Math } from "./Math";
 
@@ -23,8 +24,8 @@ export function FormulaCard({ formula, index = 0, onClick, compact = false }: Fo
       whileHover={{ y: -2, boxShadow: "0 12px 28px rgba(15,23,42,0.08)" }}
       onClick={onClick}
       className={cn(
-        "group w-full rounded-2xl border border-slate-200/90 bg-white p-5 text-left shadow-sm transition",
-        "hover:border-york-red/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-york-red/30",
+        "group w-full cursor-pointer rounded-2xl border border-slate-200/90 bg-white p-5 text-left shadow-sm transition",
+        "hover:border-york-red/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-york-red/30",
       )}
     >
       <div className="mb-3 flex items-start justify-between gap-3">
@@ -60,7 +61,7 @@ export function FormulaCard({ formula, index = 0, onClick, compact = false }: Fo
             ))}
           </div>
 
-          {formula.source && formula.source.length > 0 && (
+          {showSourceMetadata && formula.source && formula.source.length > 0 && (
             <div className="mt-3 flex items-center gap-1.5 text-xs text-slate-400">
               <BookMarked className="h-3.5 w-3.5" />
               Source: {formula.source.map((s) => `${s.sheet}${s.page ? `, p. ${s.page}` : ""}`).join(" · ")}

@@ -37,8 +37,9 @@ export function SubtopicAccordion({
             className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
           >
             <button
+              type="button"
               onClick={() => setOpenSubtopic(isOpen ? null : group.subtopic)}
-              className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-slate-50"
+              className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-york-red/5"
             >
               <div>
                 <h3 className="text-base font-semibold text-navy">{group.subtopic}</h3>

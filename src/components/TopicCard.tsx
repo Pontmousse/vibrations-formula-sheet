@@ -21,10 +21,10 @@ export function TopicCard({ topic, selected, onClick, index = 0 }: TopicCardProp
       whileHover={{ y: -3 }}
       onClick={onClick}
       className={cn(
-        "group w-full rounded-2xl border p-5 text-left shadow-sm transition",
+        "group w-full cursor-pointer rounded-2xl border p-5 text-left shadow-sm transition",
         selected
-          ? "border-york-red bg-york-red text-white shadow-md"
-          : "border-slate-200 bg-white hover:border-york-red/30 hover:shadow-md",
+          ? "border-york-red bg-york-red text-white shadow-md shadow-york-red/20"
+          : "border-slate-200 bg-white hover:border-york-red/40 hover:shadow-md",
       )}
     >
       <div className="flex items-start justify-between gap-3">

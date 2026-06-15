@@ -40,7 +40,6 @@ function scoreFormula(
       ...(formula.commonMistakes ?? []),
       ...(formula.problemTypes ?? []),
       ...formula.tags,
-      ...(formula.source?.map((s) => `${s.sheet} page ${s.page ?? ""}`) ?? []),
     ].join(" "),
   );
 
@@ -79,37 +78,4 @@ export function searchFormulas(
     }))
     .filter((result) => result.score > 0)
     .sort((a, b) => b.score - a.score);
-}
-
-export const FILTER_TAGS = [
-  "SDOF",
-  "Free vibration",
-  "Forced vibration",
-  "Damping",
-  "Base excitation",
-  "Fourier",
-  "Impulse",
-  "Two DOF",
-  "Equivalent systems",
-  "Common mistakes",
-  "Exam-useful",
-  "Conceptual",
-] as const;
-
-export type FilterTag = (typeof FILTER_TAGS)[number];
-
-export function filterFormulas(
-  formulas: FormulaEntry[],
-  activeFilters: FilterTag[],
-): FormulaEntry[] {
-  if (activeFilters.length === 0) return formulas;
-
-  return formulas.filter((formula) =>
-    activeFilters.every((filter) => {
-      if (filter === "Common mistakes") {
-        return (formula.commonMistakes?.length ?? 0) > 0;
-      }
-      return formula.tags.includes(filter);
-    }),
-  );
 }

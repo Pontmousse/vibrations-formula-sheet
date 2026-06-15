@@ -5,12 +5,13 @@ import { BookOpen, Sparkles } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-gradient-to-br from-white via-white to-slate-50 px-6 py-10 shadow-sm sm:px-10 sm:py-12">
-      <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-york-red/5 blur-3xl" />
+    <section className="relative overflow-hidden rounded-2xl border border-york-red/15 bg-gradient-to-br from-white via-white to-york-red/5 px-6 py-10 shadow-sm sm:px-10 sm:py-12">
+      <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-york-red/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-20 -left-10 h-48 w-48 rounded-full bg-navy/5 blur-3xl" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-york-red via-york-red-light to-york-red" />
 
       <div className="relative max-w-3xl">
-        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-york-red/15 bg-york-red/5 px-3 py-1 text-xs font-medium text-york-red">
+        <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-york-red/20 bg-york-red/10 px-3 py-1 text-xs font-semibold text-york-red">
           <Sparkles className="h-3.5 w-3.5" />
           MECH 4502 · Vibrations
         </div>
@@ -40,7 +41,7 @@ export function Hero() {
           className="mt-6 flex items-center gap-2 text-sm text-slate-500"
         >
           <BookOpen className="h-4 w-4 text-york-red" />
-          Navigate by chapter and concept — not by quiz or exam.
+          Navigate by chapter, concept, and problem type.
         </motion.div>
       </div>
     </section>

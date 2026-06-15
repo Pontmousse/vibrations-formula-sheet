@@ -56,7 +56,7 @@ export const formulas: FormulaEntry[] = [
     ],
     relatedFormulaIds: ["underdamped-free-response", "undamped-forced-response"],
     problemTypes: ["Complex exponential form of harmonic motion"],
-    tags: ["Conceptual", "SDOF", "Exam-useful"],
+    tags: ["Conceptual", "SDOF"],
     source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
     example: {
       prompt: "Express cos(ωt) using complex exponentials.",
@@ -94,7 +94,7 @@ export const formulas: FormulaEntry[] = [
     ],
     relatedFormulaIds: ["natural-frequency"],
     problemTypes: ["Equivalent mass/inertia problems"],
-    tags: ["Conceptual", "Equivalent systems", "Exam-useful"],
+    tags: ["Conceptual", "Equivalent systems"],
     source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
   },
   {
@@ -130,7 +130,7 @@ export const formulas: FormulaEntry[] = [
     ],
     relatedFormulaIds: ["damped-natural-frequency", "springs-parallel", "springs-series"],
     problemTypes: ["SDOF parameter identification", "Equivalent system setup"],
-    tags: ["SDOF", "Free vibration", "Conceptual", "Exam-useful"],
+    tags: ["SDOF", "Free vibration", "Conceptual"],
     source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
     example: {
       prompt: "A 5 kg mass on a 200 N/m spring. Find ω_n.",
@@ -164,7 +164,7 @@ export const formulas: FormulaEntry[] = [
     ],
     relatedFormulaIds: ["damping-ratio", "critically-damped-response"],
     problemTypes: ["Damping classification"],
-    tags: ["SDOF", "Damping", "Exam-useful"],
+    tags: ["SDOF", "Damping"],
     source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
   },
   {
@@ -194,7 +194,7 @@ export const formulas: FormulaEntry[] = [
     ],
     relatedFormulaIds: ["damped-natural-frequency", "log-decrement", "magnification-factor"],
     problemTypes: ["Damping identification from response data"],
-    tags: ["SDOF", "Damping", "Conceptual", "Exam-useful"],
+    tags: ["SDOF", "Damping", "Conceptual"],
     source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
   },
   {
@@ -223,7 +223,7 @@ export const formulas: FormulaEntry[] = [
     ],
     relatedFormulaIds: ["underdamped-free-response", "damping-ratio"],
     problemTypes: ["Underdamped free vibration"],
-    tags: ["SDOF", "Damping", "Free vibration", "Exam-useful"],
+    tags: ["SDOF", "Damping", "Free vibration"],
     source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
   },
   {
@@ -252,7 +252,7 @@ export const formulas: FormulaEntry[] = [
     ],
     relatedFormulaIds: ["damping-ratio", "underdamped-free-response"],
     problemTypes: ["Experimental damping measurement"],
-    tags: ["SDOF", "Damping", "Free vibration", "Exam-useful"],
+    tags: ["SDOF", "Damping", "Free vibration"],
     source: [{ sheet: "Quiz 2 formula sheet", page: 2 }],
   },
   {
@@ -281,7 +281,7 @@ export const formulas: FormulaEntry[] = [
     ],
     relatedFormulaIds: ["natural-frequency", "euler-formula"],
     problemTypes: ["Initial value problems, undamped"],
-    tags: ["SDOF", "Free vibration", "Exam-useful"],
+    tags: ["SDOF", "Free vibration"],
     source: [{ sheet: "Quiz 1 formula sheet", page: 3 }],
     example: {
       prompt: "x(0) = x₀, ẋ(0) = 0. Find x(t).",
@@ -311,7 +311,7 @@ export const formulas: FormulaEntry[] = [
     ],
     relatedFormulaIds: ["damped-natural-frequency", "log-decrement"],
     problemTypes: ["Underdamped transient response"],
-    tags: ["SDOF", "Free vibration", "Damping", "Exam-useful"],
+    tags: ["SDOF", "Free vibration", "Damping"],
     source: [{ sheet: "Quiz 2 formula sheet", page: 2 }],
   },
   {
@@ -378,7 +378,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Using r² in denominator as 1 + r²", "Ignoring phase jump at resonance"],
     relatedFormulaIds: ["magnification-factor-undamped", "phase-angle"],
     problemTypes: ["Harmonic forcing, undamped"],
-    tags: ["SDOF", "Forced vibration", "Exam-useful"],
+    tags: ["SDOF", "Forced vibration"],
     source: [{ sheet: "Midterm formula sheet", page: 2 }],
   },
   {
@@ -401,7 +401,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Forgetting absolute value / sign change below and above resonance"],
     relatedFormulaIds: ["undamped-forced-response", "magnification-factor"],
     problemTypes: ["Resonance problems"],
-    tags: ["SDOF", "Forced vibration", "Exam-useful"],
+    tags: ["SDOF", "Forced vibration"],
     source: [{ sheet: "Midterm formula sheet", page: 2 }],
   },
   {
@@ -424,7 +424,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Dropping the damping term (2ζr)²", "Using undamped formula when ζ is given"],
     relatedFormulaIds: ["magnification-factor", "phase-angle"],
     problemTypes: ["Damped harmonic response"],
-    tags: ["SDOF", "Forced vibration", "Damping", "Exam-useful"],
+    tags: ["SDOF", "Forced vibration", "Damping"],
     source: [{ sheet: "Midterm formula sheet", page: 3 }],
   },
   {
@@ -447,7 +447,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Confusing M with transmissibility TR"],
     relatedFormulaIds: ["damped-forced-amplitude", "transmissibility-absolute"],
     problemTypes: ["Forced vibration design"],
-    tags: ["SDOF", "Forced vibration", "Damping", "Exam-useful"],
+    tags: ["SDOF", "Forced vibration", "Damping"],
     source: [{ sheet: "Midterm formula sheet", page: 3 }],
   },
   {
@@ -499,7 +499,7 @@ export const formulas: FormulaEntry[] = [
     ],
     relatedFormulaIds: ["transmissibility-relative", "magnification-factor"],
     problemTypes: ["Base excitation", "Isolation design"],
-    tags: ["SDOF", "Base excitation", "Forced vibration", "Exam-useful"],
+    tags: ["SDOF", "Base excitation", "Forced vibration"],
     source: [{ sheet: "Midterm formula sheet", page: 4 }],
   },
   {
@@ -568,7 +568,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Using wrong integration limits (should be one period)"],
     relatedFormulaIds: ["fourier-coefficients", "discrete-fourier-coefficients"],
     problemTypes: ["Periodic forcing expansion"],
-    tags: ["Fourier", "Forced vibration", "Conceptual", "Exam-useful"],
+    tags: ["Fourier", "Forced vibration", "Conceptual"],
     source: [{ sheet: "Midterm formula sheet", page: 5 }],
   },
   {
@@ -590,7 +590,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Wrong limits or forgetting 2/T factor"],
     relatedFormulaIds: ["fourier-series", "discrete-fourier-coefficients"],
     problemTypes: ["Fourier coefficient calculation"],
-    tags: ["Fourier", "Forced vibration", "Exam-useful"],
+    tags: ["Fourier", "Forced vibration"],
     source: [{ sheet: "Midterm formula sheet", page: 5 }],
   },
   {
@@ -635,7 +635,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Missing 1/(mω_n) factor", "Using for t < 0"],
     relatedFormulaIds: ["duhamel-integral", "impulse-response-underdamped"],
     problemTypes: ["Impulse response", "Convolution"],
-    tags: ["SDOF", "Impulse", "Forced vibration", "Exam-useful"],
+    tags: ["SDOF", "Impulse", "Forced vibration"],
     source: [{ sheet: "Final exam formula sheet", page: 1 }],
   },
   {
@@ -657,7 +657,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Using ω_n instead of ω_d in sine term"],
     relatedFormulaIds: ["impulse-response-undamped", "duhamel-integral"],
     problemTypes: ["Damped impulse response"],
-    tags: ["SDOF", "Impulse", "Damping", "Exam-useful"],
+    tags: ["SDOF", "Impulse", "Damping"],
     source: [{ sheet: "Final exam formula sheet", page: 1 }],
   },
   {
@@ -680,7 +680,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Wrong convolution limits", "Using wrong h(t) for damping level"],
     relatedFormulaIds: ["impulse-response-undamped", "step-response"],
     problemTypes: ["General transient forcing"],
-    tags: ["SDOF", "Impulse", "Forced vibration", "Exam-useful"],
+    tags: ["SDOF", "Impulse", "Forced vibration"],
     source: [{ sheet: "Final exam formula sheet", page: 2 }],
   },
   {
@@ -726,7 +726,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Incorrect coupling terms in [K]", "Dimension mismatch in matrices"],
     relatedFormulaIds: ["two-dof-frequency-equation", "mode-shape-ratio"],
     problemTypes: ["2-DOF modeling"],
-    tags: ["Two DOF", "Free vibration", "Conceptual", "Exam-useful"],
+    tags: ["Two DOF", "Free vibration", "Conceptual"],
     source: [{ sheet: "Final exam formula sheet", page: 3 }],
   },
   {
@@ -749,7 +749,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Sign errors in [K] assembly", "Forgetting ω² factor"],
     relatedFormulaIds: ["two-dof-matrix-eom", "mode-shape-ratio"],
     problemTypes: ["Natural frequency of 2-DOF"],
-    tags: ["Two DOF", "Free vibration", "Exam-useful"],
+    tags: ["Two DOF", "Free vibration"],
     source: [{ sheet: "Final exam formula sheet", page: 3 }],
   },
   {
@@ -793,7 +793,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Adding stiffnesses instead of using reciprocal rule"],
     relatedFormulaIds: ["springs-parallel", "natural-frequency"],
     problemTypes: ["Equivalent stiffness"],
-    tags: ["Equivalent systems", "SDOF", "Exam-useful"],
+    tags: ["Equivalent systems", "SDOF"],
     source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
   },
   {
@@ -815,7 +815,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Using series formula for parallel geometry"],
     relatedFormulaIds: ["springs-series", "natural-frequency"],
     problemTypes: ["Equivalent stiffness"],
-    tags: ["Equivalent systems", "SDOF", "Exam-useful"],
+    tags: ["Equivalent systems", "SDOF"],
     source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
   },
   {
@@ -839,7 +839,7 @@ export const formulas: FormulaEntry[] = [
     commonMistakes: ["Using simply supported formula instead of cantilever", "Wrong power of L"],
     relatedFormulaIds: ["beam-stiffness-simply-supported", "natural-frequency"],
     problemTypes: ["Beam equivalent stiffness"],
-    tags: ["Equivalent systems", "SDOF", "Exam-useful"],
+    tags: ["Equivalent systems", "SDOF"],
     source: [{ sheet: "Quiz 1 formula sheet", page: 3 }],
   },
   {
