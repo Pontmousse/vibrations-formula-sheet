@@ -22,7 +22,24 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-### Production build
+### GitHub Pages
+
+The site deploys automatically to GitHub Pages when changes are pushed to `main`.
+
+**Live site:** https://pontmousse.github.io/vibrations-formula-sheet/
+
+In the repo, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions** (not "Deploy from branch").
+
+To test the production build locally:
+
+```bash
+npm run build:gh-pages
+npx serve out
+```
+
+Then open http://localhost:3000/vibrations-formula-sheet/
+
+### Production build (Node server)
 
 ```bash
 npm run build
