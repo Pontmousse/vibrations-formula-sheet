@@ -1,5 +1,6 @@
 import type { FormulaEntry } from "@/data/formulas";
 import type { CourseTopic } from "@/data/courseTopics";
+import { showCommonMistakes } from "@/lib/features";
 
 export type SearchResult = {
   formula: FormulaEntry;
@@ -37,7 +38,7 @@ function scoreFormula(
       ...formula.assumptions,
       ...formula.useCases,
       ...(formula.notFor ?? []),
-      ...(formula.commonMistakes ?? []),
+      ...(showCommonMistakes ? (formula.commonMistakes ?? []) : []),
       ...(formula.problemTypes ?? []),
       ...formula.tags,
     ].join(" "),

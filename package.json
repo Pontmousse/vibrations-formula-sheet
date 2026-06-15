@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:debug": "NEXT_PUBLIC_SHOW_SOURCE_METADATA=true next dev",
+    "dev:debug": "NEXT_PUBLIC_SHOW_SOURCE_METADATA=true NEXT_PUBLIC_SHOW_COMMON_MISTAKES=true next dev",
     "build": "next build",
     "build:gh-pages": "GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/vibrations-formula-sheet next build",
     "start": "next start",

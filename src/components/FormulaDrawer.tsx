@@ -2,10 +2,10 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { X, BookOpen, AlertCircle, Lightbulb, Link2, Calculator } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { FormulaEntry } from "@/data/formulas";
 import { getFormulaById } from "@/data/formulas";
-import { showSourceMetadata } from "@/lib/features";
+import { showSourceMetadata, showCommonMistakes } from "@/lib/features";
 import { cn } from "@/lib/utils";
 import { Math } from "./Math";
 
@@ -29,6 +29,17 @@ type TabId = (typeof TABS)[number]["id"];
 
 export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDrawerProps) {
   const [activeTab, setActiveTab] = useState<TabId>("meaning");
+
+  const visibleTabs = useMemo(
+    () => TABS.filter((tab) => tab.id !== "mistakes" || showCommonMistakes),
+    [],
+  );
+
+  useEffect(() => {
+    if (!showCommonMistakes && activeTab === "mistakes") {
+      setActiveTab("meaning");
+    }
+  }, [activeTab]);
 
   const relatedFormulas =
     formula?.relatedFormulaIds
@@ -79,7 +90,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
 
             <div className="border-b border-slate-100 px-3">
               <div className="flex gap-1 overflow-x-auto py-2">
-                {TABS.map((tab) => {
+                {visibleTabs.map((tab) => {
                   const Icon = tab.icon;
                   return (
                     <button

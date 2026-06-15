@@ -8,15 +8,15 @@ export function BrandBar() {
       <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <div className="flex flex-wrap items-center gap-4 sm:gap-6">
           <img
-            src={assetPath("/logos/york-university.svg")}
+            src={assetPath("/yu.jpg")}
             alt="York University"
-            className="h-9 w-auto brightness-0 invert sm:h-10"
+            className="h-10 w-auto object-contain sm:h-11"
           />
           <div className="hidden h-8 w-px bg-white/25 sm:block" />
           <img
-            src={assetPath("/logos/lassonde.svg")}
+            src={assetPath("/lassonde.png")}
             alt="Lassonde School of Engineering"
-            className="h-9 w-auto rounded-md bg-white px-2 py-1 sm:h-10"
+            className="h-10 w-auto rounded-md bg-white px-2 py-1 object-contain sm:h-11"
           />
         </div>
         <div className="text-right">

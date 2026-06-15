@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, AlertTriangle, BookMarked } from "lucide-react";
 import type { FormulaEntry } from "@/data/formulas";
-import { showSourceMetadata } from "@/lib/features";
+import { showSourceMetadata, showCommonMistakes } from "@/lib/features";
 import { cn } from "@/lib/utils";
 import { Math } from "./Math";
 
@@ -68,7 +68,7 @@ export function FormulaCard({ formula, index = 0, onClick, compact = false }: Fo
             </div>
           )}
 
-          {(formula.commonMistakes?.length ?? 0) > 0 && (
+          {showCommonMistakes && (formula.commonMistakes?.length ?? 0) > 0 && (
             <div className="mt-3 flex items-start gap-1.5 rounded-lg bg-amber-50 px-2.5 py-2 text-xs text-amber-800">
               <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
               <span className="line-clamp-1">{formula.commonMistakes![0]}</span>
