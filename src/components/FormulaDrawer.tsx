@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { X, BookOpen, AlertCircle, Lightbulb, Link2, Calculator } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { FormulaEntry } from "@/data/formulas";
 import { getFormulaById } from "@/data/formulas";
 import { showSourceMetadata, showCommonMistakes } from "@/lib/features";
@@ -29,6 +29,7 @@ type TabId = (typeof TABS)[number]["id"];
 
 export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDrawerProps) {
   const [activeTab, setActiveTab] = useState<TabId>("meaning");
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const visibleTabs = useMemo(
     () => TABS.filter((tab) => tab.id !== "mistakes" || showCommonMistakes),
@@ -44,6 +45,10 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
   useEffect(() => {
     if (formula) setActiveTab("meaning");
   }, [formula?.id]);
+
+  useEffect(() => {
+    contentRef.current?.scrollTo(0, 0);
+  }, [activeTab, formula?.id]);
 
   const relatedFormulas =
     formula?.relatedFormulaIds
@@ -72,9 +77,9 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
               exit={{ opacity: 0, scale: 0.96, y: 20 }}
               transition={{ type: "spring", damping: 28, stiffness: 320 }}
               onClick={(e) => e.stopPropagation()}
-              className="pointer-events-auto flex max-h-[88vh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-navy/20 lg:max-w-3xl"
+              className="pointer-events-auto flex h-[min(720px,88vh)] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-navy/20 lg:max-w-3xl"
             >
-            <div className="border-b border-slate-100 bg-gradient-to-r from-white via-white to-york-red/[0.04] px-5 py-4 sm:px-6">
+            <div className="shrink-0 border-b border-slate-100 bg-gradient-to-r from-white via-white to-york-red/[0.04] px-5 py-4 sm:px-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wide text-york-red">
@@ -99,7 +104,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
               </div>
             </div>
 
-            <div className="border-b border-slate-100 bg-white px-3 sm:px-4">
+            <div className="shrink-0 border-b border-slate-100 bg-white px-3 sm:px-4">
               <div className="flex gap-1 overflow-x-auto py-2">
                 {visibleTabs.map((tab) => {
                   const Icon = tab.icon;
@@ -123,7 +128,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
               </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-5 py-5 sm:px-6">
+            <div ref={contentRef} className="min-h-0 flex-1 overflow-y-auto px-5 py-5 sm:px-6">
               {activeTab === "meaning" && (
                 <div className="space-y-4">
                   <p className="text-sm leading-relaxed text-slate-700">{formula.explanation}</p>
