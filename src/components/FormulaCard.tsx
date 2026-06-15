@@ -21,11 +21,11 @@ export function FormulaCard({ formula, index = 0, onClick, compact = false }: Fo
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.04 }}
-      whileHover={{ y: -2, boxShadow: "0 12px 28px rgba(15,23,42,0.08)" }}
       onClick={onClick}
       className={cn(
-        "group w-full cursor-pointer rounded-2xl border border-slate-200/90 bg-white p-5 text-left shadow-sm transition",
-        "hover:border-york-red/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-york-red/30",
+        "group w-full cursor-pointer rounded-2xl border bg-white p-5 text-left shadow-sm transition-all duration-200",
+        "border-slate-200/90 hover:-translate-y-0.5 hover:border-york-red/30 hover:shadow-lg hover:shadow-york-red/10",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-york-red/30",
       )}
     >
       <div className="mb-3 flex items-start justify-between gap-3">

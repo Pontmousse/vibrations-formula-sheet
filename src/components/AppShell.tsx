@@ -7,7 +7,6 @@ import { courseTopics } from "@/data/courseTopics";
 import { formulas } from "@/data/formulas";
 import type { FormulaEntry } from "@/data/formulas";
 import { groupFormulasByTopic } from "@/lib/grouping";
-import { assetPath } from "@/lib/features";
 import { cn } from "@/lib/utils";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { FormulaChooser } from "./FormulaChooser";
@@ -60,16 +59,9 @@ export function AppShell() {
             {sidebarOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
 
-          <div className="hidden items-center gap-3 lg:flex">
-            <img
-              src={assetPath("/favicon.svg")}
-              alt=""
-              className="h-9 w-9 rounded-lg"
-            />
-            <div>
-              <p className="text-sm font-bold leading-none text-navy">Formula Navigator</p>
-              <p className="text-[11px] text-slate-500">MECH 4502 Vibrations</p>
-            </div>
+          <div className="hidden lg:block">
+            <p className="text-sm font-bold leading-none text-navy">Formula Navigator</p>
+            <p className="text-[11px] text-slate-500">MECH 4502 Vibrations</p>
           </div>
 
           <SearchCommand

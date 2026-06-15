@@ -4,9 +4,9 @@
 :root {
   --background: #f7f8fa;
   --foreground: #0f172a;
-  --york-red: #e31837;
-  --york-red-dark: #b8122c;
-  --york-red-light: #ff4d6a;
+  --york-red: #e90b2f;
+  --york-red-dark: #c00928;
+  --york-red-light: #ff3d5c;
   --navy: #0f1f3d;
   --charcoal: #1e293b;
   --warm-accent: #d97706;
@@ -16,9 +16,9 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-page: #f7f8fa;
-  --color-york-red: #e31837;
-  --color-york-red-dark: #b8122c;
-  --color-york-red-light: #ff4d6a;
+  --color-york-red: #e90b2f;
+  --color-york-red-dark: #c00928;
+  --color-york-red-light: #ff3d5c;
   --color-navy: #0f1f3d;
   --color-charcoal: #1e293b;
   --color-warm-accent: #d97706;
@@ -49,7 +49,6 @@ button:disabled,
   cursor: not-allowed;
 }
 
-/* KaTeX sizing in cards */
 .katex {
   font-size: 1.05em;
 }
@@ -72,10 +71,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e3183766;
+  background: #e90b2f66;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #e31837;
+  background: #e90b2f;
 }
