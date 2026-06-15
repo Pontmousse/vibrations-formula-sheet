@@ -4,7 +4,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, BookOpen, AlertCircle, Lightbulb, Link2, Calculator } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { FormulaEntry } from "@/data/formulas";
-import { getFormulaById } from "@/data/formulas";
+import { getFormulaById, getTopicTitle } from "@/data/formulas";
+import { courseTopics } from "@/data/courseTopics";
 import { showSourceMetadata, showCommonMistakes } from "@/lib/features";
 import { cn } from "@/lib/utils";
 import { Math } from "./Math";
@@ -82,10 +83,13 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
             <div className="shrink-0 border-b border-slate-100 bg-gradient-to-r from-white via-white to-york-red/[0.04] px-5 py-4 sm:px-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-wide text-york-red">
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                    {getTopicTitle(formula.topic, courseTopics)}
+                  </p>
+                  <p className="mt-1 text-xs font-medium uppercase tracking-wide text-york-red">
                     {formula.subtopic}
                   </p>
-                  <h2 id="formula-panel-title" className="mt-1 text-xl font-bold text-navy sm:text-2xl">
+                  <h2 id="formula-panel-title" className="mt-1.5 text-xl font-bold text-navy sm:text-2xl">
                     {formula.title}
                   </h2>
                 </div>
