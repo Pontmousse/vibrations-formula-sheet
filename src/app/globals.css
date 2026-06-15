@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+:root {
+  --background: #f8f9fb;
+  --foreground: #0f172a;
+  --york-red: #b91c1c;
+  --york-red-light: #f87171;
+  --navy: #0f1f3d;
+  --charcoal: #1e293b;
+  --warm-accent: #d97706;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-page: #f8f9fb;
+  --color-york-red: #b91c1c;
+  --color-york-red-light: #f87171;
+  --color-navy: #0f1f3d;
+  --color-charcoal: #1e293b;
+  --color-warm-accent: #d97706;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* KaTeX sizing in cards */
+.katex {
+  font-size: 1.05em;
+}
+
+.katex-display {
+  margin: 0.5em 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
