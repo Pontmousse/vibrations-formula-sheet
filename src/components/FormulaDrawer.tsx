@@ -41,6 +41,10 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
     }
   }, [activeTab]);
 
+  useEffect(() => {
+    if (formula) setActiveTab("meaning");
+  }, [formula?.id]);
+
   const relatedFormulas =
     formula?.relatedFormulaIds
       ?.map((id) => getFormulaById(id))
@@ -55,23 +59,30 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 z-40 cursor-pointer bg-navy/30 backdrop-blur-sm"
+            className="fixed inset-0 z-40 cursor-pointer bg-navy/40 backdrop-blur-sm"
           />
 
-          <motion.aside
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 28, stiffness: 280 }}
-            className="fixed inset-y-0 right-0 z-50 flex w-full max-w-xl flex-col border-l border-slate-200 bg-white shadow-2xl"
-          >
-            <div className="border-b border-slate-100 px-5 py-4">
+          <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="formula-panel-title"
+              initial={{ opacity: 0, scale: 0.96, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 20 }}
+              transition={{ type: "spring", damping: 28, stiffness: 320 }}
+              onClick={(e) => e.stopPropagation()}
+              className="pointer-events-auto flex max-h-[88vh] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-navy/20 lg:max-w-3xl"
+            >
+            <div className="border-b border-slate-100 bg-gradient-to-r from-white via-white to-york-red/[0.04] px-5 py-4 sm:px-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wide text-york-red">
                     {formula.subtopic}
                   </p>
-                  <h2 className="mt-1 text-xl font-bold text-navy">{formula.title}</h2>
+                  <h2 id="formula-panel-title" className="mt-1 text-xl font-bold text-navy sm:text-2xl">
+                    {formula.title}
+                  </h2>
                 </div>
                 <button
                   type="button"
@@ -83,12 +94,12 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                 </button>
               </div>
 
-              <div className="mt-4 rounded-xl bg-slate-50 px-4 py-3">
+              <div className="mt-4 rounded-xl border border-slate-100 bg-slate-50 px-4 py-3">
                 <Math latex={formula.latex} />
               </div>
             </div>
 
-            <div className="border-b border-slate-100 px-3">
+            <div className="border-b border-slate-100 bg-white px-3 sm:px-4">
               <div className="flex gap-1 overflow-x-auto py-2">
                 {visibleTabs.map((tab) => {
                   const Icon = tab.icon;
@@ -100,8 +111,8 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                       className={cn(
                         "flex shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium transition",
                         activeTab === tab.id
-                          ? "bg-york-red text-white"
-                          : "text-slate-600 hover:bg-slate-100",
+                          ? "bg-york-red text-white shadow-sm shadow-york-red/25"
+                          : "text-slate-600 hover:bg-york-red/5 hover:text-york-red",
                       )}
                     >
                       <Icon className="h-3.5 w-3.5" />
@@ -112,7 +123,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
               </div>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-5 py-5">
+            <div className="flex-1 overflow-y-auto px-5 py-5 sm:px-6">
               {activeTab === "meaning" && (
                 <div className="space-y-4">
                   <p className="text-sm leading-relaxed text-slate-700">{formula.explanation}</p>
@@ -267,7 +278,8 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                 </div>
               )}
             </div>
-          </motion.aside>
+            </motion.div>
+          </div>
         </>
       )}
     </AnimatePresence>
