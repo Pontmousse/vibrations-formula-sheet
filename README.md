@@ -8,8 +8,7 @@ A modern, topic-based interactive formula navigation tool for **MECH 4502 Vibrat
 - **Rich formula cards** — LaTeX rendering, explanations, variables, assumptions, use cases, common mistakes
 - **Formula detail drawer** — tabbed panel with Meaning, Variables, Assumptions, Use Cases, Mistakes, Related, Example
 - **Global search** — search across titles, LaTeX, variables, topics, tags, and use cases
-- **Filter chips** — SDOF, damping, Fourier, impulse, two DOF, exam-useful, and more
-- **Formula chooser guide** — interactive decision tree to help students narrow down formulas
+- **Formula chooser** — interactive decision tree that recommends specific formulas with warnings
 - **Smooth animations** — Framer Motion transitions throughout
 - **Fully data-driven** — all content lives in TypeScript data files
 
@@ -58,7 +57,6 @@ src/
 │   ├── AppShell.tsx        # Main layout orchestrator
 │   ├── Hero.tsx            # Hero section
 │   ├── SearchCommand.tsx   # Global search bar
-│   ├── FilterChips.tsx     # Tag filter chips
 │   ├── TopicGrid.tsx       # Topic card grid
 │   ├── TopicCard.tsx       # Individual topic card
 │   ├── SubtopicAccordion.tsx  # Expandable subtopic sections

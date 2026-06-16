@@ -7,6 +7,7 @@ import { courseTopics } from "@/data/courseTopics";
 import { formulas } from "@/data/formulas";
 import type { FormulaEntry } from "@/data/formulas";
 import { groupFormulasByTopic } from "@/lib/grouping";
+import { showFormulaChooser } from "@/lib/features";
 import { cn } from "@/lib/utils";
 import { Breadcrumbs } from "./Breadcrumbs";
 import { FormulaChooser } from "./FormulaChooser";
@@ -130,7 +131,12 @@ export function AppShell() {
         <main className="min-w-0 flex-1 space-y-6">
           <Hero />
 
-          <FormulaChooser onBrowseTopic={handleSelectTopic} />
+          {showFormulaChooser && (
+            <FormulaChooser
+              onBrowseTopic={handleSelectTopic}
+              onSelectFormula={handleSelectFormula}
+            />
+          )}
 
           <Breadcrumbs items={breadcrumbItems} />
 

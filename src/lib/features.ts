@@ -6,6 +6,10 @@ export const showSourceMetadata =
 export const showCommonMistakes =
   process.env.NEXT_PUBLIC_SHOW_COMMON_MISTAKES === "true";
 
+/** Show the formula selection wizard (default on; set NEXT_PUBLIC_SHOW_FORMULA_CHOOSER=false to hide). */
+export const showFormulaChooser =
+  process.env.NEXT_PUBLIC_SHOW_FORMULA_CHOOSER !== "false";
+
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function assetPath(path: string): string {

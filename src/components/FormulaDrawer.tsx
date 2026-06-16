@@ -29,6 +29,29 @@ const TABS = [
 type TabId = (typeof TABS)[number]["id"];
 
 export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDrawerProps) {
+  return (
+    <AnimatePresence>
+      {formula && (
+        <FormulaDrawerPanel
+          key={formula.id}
+          formula={formula}
+          onClose={onClose}
+          onSelectRelated={onSelectRelated}
+        />
+      )}
+    </AnimatePresence>
+  );
+}
+
+function FormulaDrawerPanel({
+  formula,
+  onClose,
+  onSelectRelated,
+}: {
+  formula: FormulaEntry;
+  onClose: () => void;
+  onSelectRelated: (formula: FormulaEntry) => void;
+}) {
   const [activeTab, setActiveTab] = useState<TabId>("meaning");
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -37,49 +60,40 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
     [],
   );
 
-  useEffect(() => {
-    if (!showCommonMistakes && activeTab === "mistakes") {
-      setActiveTab("meaning");
-    }
-  }, [activeTab]);
-
-  useEffect(() => {
-    if (formula) setActiveTab("meaning");
-  }, [formula?.id]);
+  const currentTab =
+    activeTab === "mistakes" && !showCommonMistakes ? "meaning" : activeTab;
 
   useEffect(() => {
     contentRef.current?.scrollTo(0, 0);
-  }, [activeTab, formula?.id]);
+  }, [currentTab, formula.id]);
 
   const relatedFormulas =
-    formula?.relatedFormulaIds
+    formula.relatedFormulaIds
       ?.map((id) => getFormulaById(id))
       .filter((f): f is FormulaEntry => Boolean(f)) ?? [];
 
   return (
-    <AnimatePresence>
-      {formula && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 z-40 cursor-pointer bg-navy/40 backdrop-blur-sm"
-          />
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        onClick={onClose}
+        className="fixed inset-0 z-40 cursor-pointer bg-navy/40 backdrop-blur-sm"
+      />
 
-          <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
-            <motion.div
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="formula-panel-title"
-              initial={{ opacity: 0, scale: 0.96, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.96, y: 20 }}
-              transition={{ type: "spring", damping: 28, stiffness: 320 }}
-              onClick={(e) => e.stopPropagation()}
-              className="pointer-events-auto flex h-[min(720px,88vh)] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-navy/20 lg:max-w-3xl"
-            >
+      <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+        <motion.div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="formula-panel-title"
+          initial={{ opacity: 0, scale: 0.96, y: 20 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.96, y: 20 }}
+          transition={{ type: "spring", damping: 28, stiffness: 320 }}
+          onClick={(e) => e.stopPropagation()}
+          className="pointer-events-auto flex h-[min(720px,88vh)] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-navy/20 lg:max-w-3xl"
+        >
             <div className="shrink-0 border-b border-slate-100 bg-gradient-to-r from-white via-white to-york-red/[0.04] px-5 py-4 sm:px-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
@@ -119,7 +133,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                       onClick={() => setActiveTab(tab.id)}
                       className={cn(
                         "flex shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium transition",
-                        activeTab === tab.id
+                        currentTab === tab.id
                           ? "bg-york-red text-white shadow-sm shadow-york-red/25"
                           : "text-slate-600 hover:bg-york-red/5 hover:text-york-red",
                       )}
@@ -133,7 +147,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
             </div>
 
             <div ref={contentRef} className="min-h-0 flex-1 overflow-y-auto px-5 py-5 sm:px-6">
-              {activeTab === "meaning" && (
+              {currentTab === "meaning" && (
                 <div className="space-y-4">
                   <p className="text-sm leading-relaxed text-slate-700">{formula.explanation}</p>
                   {showSourceMetadata && formula.source && (
@@ -152,7 +166,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                 </div>
               )}
 
-              {activeTab === "variables" && (
+              {currentTab === "variables" && (
                 <div className="overflow-hidden rounded-xl border border-slate-100">
                   <table className="w-full text-sm">
                     <thead className="bg-slate-50 text-left text-xs uppercase tracking-wide text-slate-500">
@@ -177,7 +191,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                 </div>
               )}
 
-              {activeTab === "assumptions" && (
+              {currentTab === "assumptions" && (
                 <ul className="space-y-2">
                   {formula.assumptions.map((item, i) => (
                     <li key={i} className="flex gap-2 text-sm text-slate-700">
@@ -188,7 +202,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                 </ul>
               )}
 
-              {activeTab === "useCases" && (
+              {currentTab === "useCases" && (
                 <div className="space-y-5">
                   <div>
                     <h4 className="text-sm font-semibold text-navy">When to use it</h4>
@@ -223,7 +237,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                 </div>
               )}
 
-              {activeTab === "mistakes" && (
+              {currentTab === "mistakes" && (
                 <div>
                   {(formula.commonMistakes?.length ?? 0) > 0 ? (
                     <ul className="space-y-3">
@@ -242,7 +256,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                 </div>
               )}
 
-              {activeTab === "related" && (
+              {currentTab === "related" && (
                 <div className="space-y-3">
                   {relatedFormulas.length > 0 ? (
                     relatedFormulas.map((related) => (
@@ -264,7 +278,7 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                 </div>
               )}
 
-              {activeTab === "example" && (
+              {currentTab === "example" && (
                 <div>
                   {formula.example ? (
                     <div className="space-y-4">
@@ -287,10 +301,8 @@ export function FormulaDrawer({ formula, onClose, onSelectRelated }: FormulaDraw
                 </div>
               )}
             </div>
-            </motion.div>
-          </div>
-        </>
-      )}
-    </AnimatePresence>
+        </motion.div>
+      </div>
+    </>
   );
 }

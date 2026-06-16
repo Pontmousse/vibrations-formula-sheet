@@ -1,250 +1,306 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Compass, ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  ArrowLeft,
+  ArrowRight,
+  BookOpen,
+  ChevronRight,
+  Compass,
+  AlertTriangle,
+  RotateCcw,
+} from "lucide-react";
+import { useMemo, useState } from "react";
+import { formulas } from "@/data/formulas";
+import { getTopicTitle } from "@/data/formulas";
+import { courseTopics } from "@/data/courseTopics";
+import type { FormulaEntry } from "@/data/formulas";
+import type { SelectionResult } from "@/data/formulaSelectionTree";
+import {
+  getOptionNextNodeId,
+  getOptionResult,
+  getRootNode,
+  getSelectionNode,
+  resolveFormulas,
+} from "@/lib/formulaSelection";
 import { cn } from "@/lib/utils";
+import { Math } from "./Math";
 
-type ChoiceStep = {
+type PathEntry = {
+  nodeId: string;
   question: string;
-  options: { label: string; hint: string; topicId?: string }[];
+  answer: string;
 };
-
-const STEPS: ChoiceStep[] = [
-  {
-    question: "Is the system free or forced?",
-    options: [
-      {
-        label: "Free vibration",
-        hint: "No external forcing after t=0",
-        topicId: "free-vibration-sdof",
-      },
-      {
-        label: "Forced vibration",
-        hint: "External excitation present",
-        topicId: "forced-vibration-sdof",
-      },
-    ],
-  },
-  {
-    question: "Is damping present?",
-    options: [
-      {
-        label: "No / negligible damping",
-        hint: "Use undamped forms",
-        topicId: "free-vibration-sdof",
-      },
-      {
-        label: "Viscous damping",
-        hint: "Use ζ, ω_d, damped response",
-        topicId: "vibration-parameters",
-      },
-      {
-        label: "Coulomb / dry friction",
-        hint: "Consider equivalent viscous damping",
-        topicId: "nonviscous-coulomb-damping",
-      },
-    ],
-  },
-  {
-    question: "What type of excitation?",
-    options: [
-      {
-        label: "Harmonic (sin/cos)",
-        hint: "Steady-state amplitude and phase",
-        topicId: "forced-vibration-sdof",
-      },
-      {
-        label: "Periodic (non-sinusoidal)",
-        hint: "Fourier series and superposition",
-        topicId: "general-forcing",
-      },
-      {
-        label: "Impulsive / arbitrary",
-        hint: "Impulse response and Duhamel integral",
-        topicId: "impulse-step-response",
-      },
-      {
-        label: "Base motion",
-        hint: "Transmissibility formulas",
-        topicId: "base-excitation-isolation",
-      },
-      {
-        label: "None (free vibration)",
-        hint: "Free response by damping level",
-        topicId: "free-vibration-sdof",
-      },
-    ],
-  },
-  {
-    question: "Transient or steady-state?",
-    options: [
-      {
-        label: "Transient (IC response)",
-        hint: "Free vibration solution forms",
-        topicId: "free-vibration-sdof",
-      },
-      {
-        label: "Steady-state",
-        hint: "Harmonic amplitude, magnification, phase",
-        topicId: "forced-vibration-sdof",
-      },
-      {
-        label: "Both / general forcing",
-        hint: "Duhamel integral or modal superposition",
-        topicId: "impulse-step-response",
-      },
-    ],
-  },
-  {
-    question: "SDOF or multi-DOF?",
-    options: [
-      {
-        label: "Single DOF",
-        hint: "Scalar EOM and standard formulas",
-        topicId: "vibration-parameters",
-      },
-      {
-        label: "Two DOF",
-        hint: "Matrix EOM and natural frequencies",
-        topicId: "two-dof-systems",
-      },
-      {
-        label: "Need equivalent system first",
-        hint: "Combine m, k, c equivalents",
-        topicId: "equivalent-systems",
-      },
-    ],
-  },
-];
 
 type FormulaChooserProps = {
   onBrowseTopic: (topicId: string) => void;
+  onSelectFormula: (formula: FormulaEntry) => void;
   className?: string;
 };
 
-export function FormulaChooser({ onBrowseTopic, className }: FormulaChooserProps) {
-  const [step, setStep] = useState(0);
-  const [selections, setSelections] = useState<string[]>([]);
-  const [suggestedTopicId, setSuggestedTopicId] = useState<string | null>(null);
+export function FormulaChooser({
+  onBrowseTopic,
+  onSelectFormula,
+  className,
+}: FormulaChooserProps) {
+  const [currentNodeId, setCurrentNodeId] = useState("root");
+  const [path, setPath] = useState<PathEntry[]>([]);
+  const [result, setResult] = useState<SelectionResult | null>(null);
   const [expanded, setExpanded] = useState(true);
-  const [finished, setFinished] = useState(false);
 
-  const currentStep = STEPS[step];
+  const currentNode = getSelectionNode(currentNodeId) ?? getRootNode();
 
-  function handleOption(option: (typeof STEPS)[0]["options"][0]) {
-    const nextSelections = [...selections, option.label];
-    setSelections(nextSelections);
-    if (option.topicId) setSuggestedTopicId(option.topicId);
+  const recommendedFormulas = useMemo(
+    () => (result ? resolveFormulas(result, formulas) : []),
+    [result],
+  );
 
-    if (step < STEPS.length - 1) {
-      setStep(step + 1);
-    } else {
-      setFinished(true);
+  function handleOption(
+    option: (typeof currentNode.options)[number],
+  ) {
+    const leaf = getOptionResult(option);
+    const nextId = getOptionNextNodeId(option);
+
+    setPath((prev) => [
+      ...prev,
+      { nodeId: currentNodeId, question: currentNode.question, answer: option.label },
+    ]);
+
+    if (leaf) {
+      setResult(leaf);
+      return;
+    }
+
+    if (nextId && getSelectionNode(nextId)) {
+      setCurrentNodeId(nextId);
     }
   }
 
-  function reset() {
-    setStep(0);
-    setSelections([]);
-    setSuggestedTopicId(null);
-    setFinished(false);
+  function goBack() {
+    if (result) {
+      setResult(null);
+      if (path.length > 0) {
+        const previous = path[path.length - 1];
+        setPath((prev) => prev.slice(0, -1));
+        setCurrentNodeId(previous.nodeId);
+      }
+      return;
+    }
+
+    if (path.length === 0) return;
+
+    const previous = path[path.length - 1];
+    setPath((prev) => prev.slice(0, -1));
+    setCurrentNodeId(previous.nodeId);
   }
+
+  function reset() {
+    setCurrentNodeId("root");
+    setPath([]);
+    setResult(null);
+  }
+
+  const depth = result ? path.length : path.length + 1;
+  const maxDepth = 5;
 
   return (
     <section
       className={cn(
-        "rounded-2xl border border-york-red/20 bg-gradient-to-br from-navy via-[#142d54] to-navy p-5 text-white shadow-md sm:p-6",
+        "rounded-2xl border border-york-red/20 bg-gradient-to-br from-navy via-[#142d54] to-navy text-white shadow-md",
         className,
       )}
     >
       <button
         type="button"
         onClick={() => setExpanded(!expanded)}
-        className="flex w-full cursor-pointer items-center justify-between gap-3 text-left"
+        className="flex w-full cursor-pointer items-center justify-between gap-3 p-5 text-left sm:p-6"
       >
         <div className="flex items-center gap-3">
-          <div className="rounded-xl bg-york-red p-2 shadow-sm">
+          <div className="rounded-xl bg-york-red p-2.5 shadow-sm shadow-york-red/30">
             <Compass className="h-5 w-5 text-white" />
           </div>
           <div>
             <h2 className="text-lg font-semibold">How to choose a formula</h2>
             <p className="mt-0.5 text-sm text-slate-300">
-              Answer a few questions to find the right topic area
+              Step-by-step decision guide to recommended formulas
             </p>
           </div>
         </div>
         <ChevronRight
-          className={cn("h-5 w-5 text-slate-400 transition", expanded && "rotate-90")}
+          className={cn("h-5 w-5 shrink-0 text-slate-400 transition", expanded && "rotate-90")}
         />
       </button>
 
-      {expanded && (
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: "auto" }}
-          className="mt-5"
-        >
-          <div className="mb-4 flex items-center gap-2">
-            {STEPS.map((_, i) => (
-              <div
-                key={i}
-                className={cn(
-                  "h-1.5 flex-1 rounded-full",
-                  i <= step ? "bg-york-red" : "bg-white/15",
-                )}
-              />
-            ))}
-          </div>
-
-          {!finished ? (
-            <>
-              <p className="text-sm font-medium text-white/90">{currentStep.question}</p>
-              <div className="mt-3 grid gap-2 sm:grid-cols-2">
-                {currentStep.options.map((option) => (
-                  <button
-                    key={option.label}
-                    type="button"
-                    onClick={() => handleOption(option)}
-                    className="cursor-pointer rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left transition hover:border-york-red hover:bg-york-red/20"
-                  >
-                    <p className="text-sm font-medium">{option.label}</p>
-                    <p className="mt-1 text-xs text-slate-300">{option.hint}</p>
-                  </button>
+      <AnimatePresence initial={false}>
+        {expanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="overflow-hidden"
+          >
+            <div className="border-t border-white/10 px-5 pb-5 sm:px-6 sm:pb-6">
+              {/* Progress */}
+              <div className="mb-4 flex items-center gap-2">
+                {Array.from({ length: maxDepth }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={cn(
+                      "h-1.5 flex-1 rounded-full transition-colors",
+                      i < depth ? "bg-york-red" : "bg-white/10",
+                    )}
+                  />
                 ))}
               </div>
-            </>
-          ) : (
-            <div className="rounded-xl border border-york-red/30 bg-york-red/10 p-4">
-              <p className="text-sm font-medium text-white">
-                Based on your answers, start with the highlighted topic area below.
-              </p>
-              {suggestedTopicId && (
-                <button
-                  type="button"
-                  onClick={() => onBrowseTopic(suggestedTopicId)}
-                  className="mt-3 cursor-pointer rounded-lg bg-york-red px-4 py-2 text-sm font-semibold text-white transition hover:bg-york-red-dark"
-                >
-                  Open suggested topic
-                </button>
-              )}
-            </div>
-          )}
 
-          <div className="mt-4 flex items-center justify-between">
-            <button
-              type="button"
-              onClick={reset}
-              className="cursor-pointer text-xs text-slate-400 transition hover:text-white"
-            >
-              Start over
-            </button>
-            {selections.length > 0 && (
-              <p className="text-[11px] text-slate-400">{selections.join(" → ")}</p>
-            )}
-          </div>
-        </motion.div>
-      )}
+              {/* Path breadcrumb */}
+              {path.length > 0 && (
+                <div className="mb-4 flex flex-wrap gap-1.5">
+                  {path.map((entry, i) => (
+                    <span
+                      key={`${entry.nodeId}-${i}`}
+                      className="rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] text-slate-300"
+                    >
+                      {entry.answer}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              <AnimatePresence mode="wait">
+                {!result ? (
+                  <motion.div
+                    key={currentNodeId}
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -12 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <p className="text-base font-medium text-white">{currentNode.question}</p>
+                    {currentNode.subtitle && (
+                      <p className="mt-1 text-sm text-slate-400">{currentNode.subtitle}</p>
+                    )}
+
+                    <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                      {currentNode.options.map((option) => (
+                        <button
+                          key={option.id}
+                          type="button"
+                          onClick={() => handleOption(option)}
+                          className="group cursor-pointer rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-left transition hover:border-york-red/60 hover:bg-york-red/15"
+                        >
+                          <div className="flex items-start justify-between gap-2">
+                            <p className="text-sm font-medium text-white group-hover:text-white">
+                              {option.label}
+                            </p>
+                            <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-slate-500 transition group-hover:text-york-red-light" />
+                          </div>
+                          <p className="mt-1 text-xs leading-relaxed text-slate-400">
+                            {option.hint}
+                          </p>
+                        </button>
+                      ))}
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="result"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.25 }}
+                    className="space-y-4"
+                  >
+                    <div className="rounded-xl border border-york-red/30 bg-york-red/10 p-4">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-york-red-light">
+                        Recommended starting point
+                      </p>
+                      <h3 className="mt-1 text-lg font-semibold text-white">{result.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                        {result.description}
+                      </p>
+                      <p className="mt-2 text-xs text-slate-400">
+                        Topic: {getTopicTitle(result.topicId, courseTopics)}
+                      </p>
+                    </div>
+
+                    {result.warnings && result.warnings.length > 0 && (
+                      <div className="space-y-2">
+                        {result.warnings.map((warning) => (
+                          <div
+                            key={warning}
+                            className="flex gap-2 rounded-lg border border-amber-400/20 bg-amber-400/10 px-3 py-2.5 text-xs leading-relaxed text-amber-100"
+                          >
+                            <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-300" />
+                            {warning}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    <div>
+                      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                        Suggested formulas ({recommendedFormulas.length})
+                      </p>
+                      <div className="grid gap-2 sm:grid-cols-2">
+                        {recommendedFormulas.map((formula) => (
+                          <button
+                            key={formula.id}
+                            type="button"
+                            onClick={() => onSelectFormula(formula)}
+                            className="group cursor-pointer rounded-xl border border-white/10 bg-white/5 p-3 text-left transition hover:border-york-red/40 hover:bg-white/10"
+                          >
+                            <p className="text-sm font-medium text-white group-hover:text-york-red-light">
+                              {formula.title}
+                            </p>
+                            <div className="mt-2 overflow-hidden rounded-lg bg-white/90 px-2 py-1.5">
+                              <Math latex={formula.latex} display={false} className="text-xs" />
+                            </div>
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => onBrowseTopic(result.topicId)}
+                      className="inline-flex cursor-pointer items-center gap-2 rounded-lg bg-york-red px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-york-red-dark"
+                    >
+                      <BookOpen className="h-4 w-4" />
+                      Browse full topic
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Controls */}
+              <div className="mt-5 flex items-center justify-between border-t border-white/10 pt-4">
+                <div className="flex gap-3">
+                  {(path.length > 0 || result) && (
+                    <button
+                      type="button"
+                      onClick={goBack}
+                      className="inline-flex cursor-pointer items-center gap-1.5 text-xs text-slate-400 transition hover:text-white"
+                    >
+                      <ArrowLeft className="h-3.5 w-3.5" />
+                      Back
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    onClick={reset}
+                    className="inline-flex cursor-pointer items-center gap-1.5 text-xs text-slate-400 transition hover:text-white"
+                  >
+                    <RotateCcw className="h-3.5 w-3.5" />
+                    Start over
+                  </button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
