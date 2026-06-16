@@ -156,15 +156,17 @@ export function FormulaChooser({
 
               {/* Path breadcrumb */}
               {path.length > 0 && (
-                <div className="mb-4 flex flex-wrap gap-1.5">
-                  {path.map((entry, i) => (
-                    <span
-                      key={`${entry.nodeId}-${i}`}
-                      className="rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] text-slate-300"
-                    >
-                      {entry.answer}
-                    </span>
-                  ))}
+                <div className="mb-4 -mx-1 overflow-x-auto px-1">
+                  <div className="flex w-max max-w-full gap-1.5">
+                    {path.map((entry, i) => (
+                      <span
+                        key={`${entry.nodeId}-${i}`}
+                        className="rounded-full bg-white/10 px-2.5 py-0.5 text-[11px] text-slate-300"
+                      >
+                        {entry.answer}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               )}
 

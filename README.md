@@ -2,6 +2,8 @@
 
 A modern, topic-based interactive formula navigation tool for **MECH 4502 Vibrations** at York University / Lassonde. Students browse formulas by course topic, concept, and problem type — not by quiz or exam.
 
+**Extended documentation:** see [documentation.md](./documentation.md) for architecture, formula selector intent, and redesign guidelines.
+
 ## Features
 
 - **Topic-based navigation** — organized by chapters and concepts (SDOF free vibration, forced vibration, Fourier series, 2-DOF, etc.)
@@ -61,15 +63,18 @@ src/
 │   ├── TopicCard.tsx       # Individual topic card
 │   ├── SubtopicAccordion.tsx  # Expandable subtopic sections
 │   ├── FormulaCard.tsx     # Formula preview card
-│   ├── FormulaDrawer.tsx   # Right-side detail drawer
-│   ├── FormulaChooser.tsx  # "How to choose a formula" guide
+│   ├── FormulaDrawer.tsx   # Centered formula detail modal
+│   ├── FormulaChooser.tsx  # Decision-tree formula guide
+│   ├── BrandBar.tsx        # York / Lassonde header bar
 │   ├── Math.tsx            # KaTeX wrapper component
 │   └── Breadcrumbs.tsx     # Navigation breadcrumbs
 ├── data/
 │   ├── formulas.ts         # All formula entries (extend here)
-│   └── courseTopics.ts     # Course topic hierarchy (extend here)
+│   ├── courseTopics.ts     # Course topic hierarchy (extend here)
+│   └── formulaSelectionTree.ts  # Decision tree for formula chooser
 └── lib/
-    ├── search.ts           # Search and filter logic
+    ├── search.ts           # Search logic
+    ├── formulaSelection.ts # Chooser tree helpers
     ├── grouping.ts         # Group formulas by topic/subtopic
     └── utils.ts            # Utility helpers (cn)
 ```
@@ -122,6 +127,26 @@ Edit `src/data/courseTopics.ts` and add a new entry:
 ```
 
 Then add formulas with `topic: "my-new-topic"` and matching `subtopic` values.
+
+## Formula chooser (decision tree)
+
+The interactive guide lives in `src/data/formulaSelectionTree.ts`. Each node has a question and options; options either point to another node (`nextNodeId`) or a leaf result (`result`) with `formulaIds` and optional `warnings`.
+
+Visible by default. To hide in production:
+
+```bash
+NEXT_PUBLIC_SHOW_FORMULA_CHOOSER=false npm run build
+```
+
+## Feature flags
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `NEXT_PUBLIC_SHOW_FORMULA_CHOOSER` | `true` | Show/hide the decision-tree guide |
+| `NEXT_PUBLIC_SHOW_SOURCE_METADATA` | `false` | Show quiz/midterm source on cards |
+| `NEXT_PUBLIC_SHOW_COMMON_MISTAKES` | `false` | Show common-mistakes content |
+
+Use `npm run dev:debug` to enable source metadata and common mistakes locally.
 
 ## How to Change Colors / Theme
 

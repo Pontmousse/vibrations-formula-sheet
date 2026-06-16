@@ -14,6 +14,8 @@ type SearchCommandProps = {
   topics: CourseTopic[];
   onSelect: (formula: FormulaEntry) => void;
   className?: string;
+  /** When true, closes the dropdown (e.g. mobile nav opened). */
+  forceClose?: boolean;
 };
 
 export function SearchCommand({
@@ -21,6 +23,7 @@ export function SearchCommand({
   topics,
   onSelect,
   className,
+  forceClose = false,
 }: SearchCommandProps) {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -41,8 +44,10 @@ export function SearchCommand({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const showDropdown = open && !forceClose && query.trim().length > 0;
+
   return (
-    <div ref={containerRef} className={cn("relative w-full max-w-xl", className)}>
+    <div ref={containerRef} className={cn("relative w-full", className)}>
       <div className="relative">
         <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
         <input
@@ -53,8 +58,9 @@ export function SearchCommand({
             setOpen(true);
           }}
           onFocus={() => setOpen(true)}
-          placeholder="Search formulas, variables, topics… (e.g. zeta, Duhamel, transmissibility)"
-          className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-10 text-sm text-slate-800 shadow-sm outline-none transition focus:border-york-red/40 focus:ring-2 focus:ring-york-red/15"
+          placeholder="Search formulas…"
+          className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-10 text-sm text-slate-800 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-york-red/40 focus:ring-2 focus:ring-york-red/15 sm:placeholder:text-slate-500"
+          aria-label="Search formulas"
         />
         {query && (
           <button
@@ -72,23 +78,24 @@ export function SearchCommand({
       </div>
 
       <AnimatePresence>
-        {open && query.trim().length > 0 && (
+        {showDropdown && (
           <motion.div
             initial={{ opacity: 0, y: -4 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -4 }}
             transition={{ duration: 0.15 }}
-            className="absolute z-50 mt-2 w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl"
+            className="absolute left-0 right-0 z-[60] mt-2 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl"
           >
             {results.length === 0 ? (
               <div className="px-4 py-6 text-center text-sm text-slate-500">
                 No formulas found for &ldquo;{query}&rdquo;
               </div>
             ) : (
-              <ul className="max-h-80 overflow-y-auto py-2">
+              <ul className="max-h-[min(20rem,50vh)] overflow-y-auto py-2">
                 {results.map(({ formula, topicTitle }) => (
                   <li key={formula.id}>
                     <button
+                      type="button"
                       onClick={() => {
                         onSelect(formula);
                         setOpen(false);

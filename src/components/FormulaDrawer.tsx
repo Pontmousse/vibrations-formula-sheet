@@ -82,17 +82,17 @@ function FormulaDrawerPanel({
         className="fixed inset-0 z-40 cursor-pointer bg-navy/40 backdrop-blur-sm"
       />
 
-      <div className="pointer-events-none fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+      <div className="pointer-events-none fixed inset-0 z-50 flex items-end justify-center sm:items-center sm:p-6">
         <motion.div
           role="dialog"
           aria-modal="true"
           aria-labelledby="formula-panel-title"
-          initial={{ opacity: 0, scale: 0.96, y: 20 }}
+          initial={{ opacity: 0, scale: 0.98, y: 24 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.96, y: 20 }}
+          exit={{ opacity: 0, scale: 0.98, y: 24 }}
           transition={{ type: "spring", damping: 28, stiffness: 320 }}
           onClick={(e) => e.stopPropagation()}
-          className="pointer-events-auto flex h-[min(720px,88vh)] w-full max-w-2xl flex-col overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-2xl shadow-navy/20 lg:max-w-3xl"
+          className="pointer-events-auto flex h-[min(720px,92dvh)] w-full max-w-2xl flex-col overflow-hidden rounded-t-2xl border border-slate-200/80 bg-white shadow-2xl shadow-navy/20 sm:rounded-2xl lg:max-w-3xl"
         >
             <div className="shrink-0 border-b border-slate-100 bg-gradient-to-r from-white via-white to-york-red/[0.04] px-5 py-4 sm:px-6">
               <div className="flex items-start justify-between gap-4">
