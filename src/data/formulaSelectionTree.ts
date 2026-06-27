@@ -43,6 +43,11 @@ export const selectionResults: Record<string, SelectionResult> = {
       "viscous-shear-damper",
       "viscous-damper-annular-geometry",
       "viscous-damper-composite-film",
+      "inertia-solid-disk",
+      "inertia-thin-ring",
+      "inertia-solid-sphere",
+      "inertia-slender-rod-end",
+      "inertia-rectangular-plate",
       "parallel-axis-theorem",
       "natural-frequency",
     ],
@@ -57,8 +62,11 @@ export const selectionResults: Record<string, SelectionResult> = {
     topicId: "two-dof-systems",
     formulaIds: [
       "two-dof-matrix-eom",
+      "two-dof-scalar-eom",
       "two-dof-frequency-equation",
+      "two-dof-natural-frequency-roots",
       "mode-shape-ratio",
+      "two-dof-free-response",
     ],
     warnings: [
       "Mode-shape ratios depend on system topology and coordinate choice — verify your layout.",
@@ -107,6 +115,7 @@ export const selectionResults: Record<string, SelectionResult> = {
       "damped-forced-amplitude",
       "magnification-factor",
       "phase-angle",
+      "damped-harmonic-total-response",
     ],
     warnings: [
       "These are for force on the mass — not base excitation (use transmissibility instead).",
@@ -122,6 +131,9 @@ export const selectionResults: Record<string, SelectionResult> = {
       "sdof-free-eom",
       "underdamped-free-response",
       "underdamped-initial-condition-constants",
+      "undamped-forced-response",
+      "damped-harmonic-total-response",
+      "damped-harmonic-transient-constants",
       "damped-forced-amplitude",
       "duhamel-integral",
       "impulse-response-underdamped",
@@ -135,7 +147,7 @@ export const selectionResults: Record<string, SelectionResult> = {
     description:
       "Base motion input. Use transmissibility for absolute or relative motion — not magnification M.",
     topicId: "base-excitation-isolation",
-    formulaIds: ["transmissibility-absolute", "transmissibility-relative"],
+    formulaIds: ["base-excitation-eom", "transmissibility-absolute", "base-excitation-phase", "relative-motion-eom", "transmissibility-relative", "relative-motion-phase"],
     warnings: [
       "Do not use force-excitation magnification M for base-motion problems.",
     ],
@@ -149,6 +161,9 @@ export const selectionResults: Record<string, SelectionResult> = {
       "fourier-series",
       "fourier-coefficients",
       "discrete-fourier-coefficients",
+      "first-order-fourier-response",
+      "second-order-fourier-response",
+      "second-order-fourier-phase",
       "magnification-factor",
     ],
     warnings: [
@@ -161,10 +176,14 @@ export const selectionResults: Record<string, SelectionResult> = {
       "Use impulse response and convolution, or the step-response form for a sudden constant load.",
     topicId: "impulse-step-response",
     formulaIds: [
+      "impulse-momentum-definition",
+      "delta-function-properties",
       "impulse-response-undamped",
       "impulse-response-underdamped",
       "duhamel-integral",
+      "undamped-step-response",
       "step-response",
+      "base-excitation-duhamel-relative-response",
     ],
     warnings: [
       "Pick the impulse response that matches the damping level of the system.",

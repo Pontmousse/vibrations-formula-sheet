@@ -283,6 +283,138 @@ export const formulas: FormulaEntry[] = [
     source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
   },
   {
+    id: "trigonometric-sum-identities",
+    title: "Trigonometric Sum and Difference Identities",
+    topic: "foundations-modeling",
+    subtopic: "Trigonometric identities",
+    chapter: "Ch. 3-5",
+    latex: "\\sin(\\alpha\\pm\\beta)=\\sin\\alpha\\cos\\beta\\pm\\cos\\alpha\\sin\\beta,\\quad \\cos(\\alpha\\pm\\beta)=\\cos\\alpha\\cos\\beta\\mp\\sin\\alpha\\sin\\beta",
+    explanation:
+      "Trig identities used to expand phase-shifted harmonic response terms.",
+    variables: [
+      { symbol: "\\alpha, \\beta", meaning: "Angles", unit: "rad" },
+    ],
+    assumptions: [
+      "Standard trigonometric identities",
+    ],
+    useCases: [
+      "Expanding phase-shifted sine/cosine terms",
+      "Deriving harmonic response constants",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "phase-angle",
+      "damped-harmonic-transient-constants",
+    ],
+    problemTypes: [
+      "Derivation support",
+    ],
+    tags: [
+      "Conceptual",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
+  },
+  {
+    id: "integration-identities-harmonic-response",
+    title: "Integration Identities for Harmonic Response",
+    topic: "foundations-modeling",
+    subtopic: "Integration identities",
+    chapter: "Ch. 3-5",
+    latex: "\\int x\\cos(ax)dx=\\frac{\\cos(ax)+ax\\sin(ax)}{a^2},\\quad \\int x\\sin(ax)dx=\\frac{\\sin(ax)-ax\\cos(ax)}{a^2}",
+    explanation:
+      "Integration identities from the Quiz 2 sheet for harmonic and convolution derivations.",
+    variables: [
+      { symbol: "a", meaning: "Constant frequency-like coefficient", unit: "1/s" },
+      { symbol: "x", meaning: "Integration variable", unit: "varies" },
+    ],
+    assumptions: [
+      "a is constant",
+    ],
+    useCases: [
+      "Evaluating integrals in forced-vibration derivations",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "duhamel-integral",
+    ],
+    problemTypes: [
+      "Derivation support",
+    ],
+    tags: [
+      "Conceptual",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
+  },
+  {
+    id: "exponential-harmonic-integration-identities",
+    title: "Exponential-Harmonic Integration Identities",
+    topic: "foundations-modeling",
+    subtopic: "Integration identities",
+    chapter: "Ch. 3-5",
+    latex: "\\int e^{ax}\\cos(bx)dx=\\frac{e^{ax}}{a^2+b^2}\\left(a\\cos bx+b\\sin bx\\right),\\quad \\int e^{ax}\\sin(bx)dx=\\frac{e^{ax}}{a^2+b^2}\\left(a\\sin bx-b\\cos bx\\right)",
+    explanation:
+      "Useful integrals for damped response and Duhamel-integral evaluations.",
+    variables: [
+      { symbol: "a,b", meaning: "Constants", unit: "various" },
+      { symbol: "x", meaning: "Integration variable", unit: "varies" },
+    ],
+    assumptions: [
+      "a and b are constants",
+    ],
+    useCases: [
+      "Evaluating underdamped convolution integrals",
+      "Deriving step response",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "duhamel-integral",
+      "step-response",
+    ],
+    problemTypes: [
+      "Derivation support",
+    ],
+    tags: [
+      "Conceptual",
+      "Impulse",
+      "Damping",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
+  },
+  {
+    id: "integration-by-parts",
+    title: "Integration by Parts",
+    topic: "foundations-modeling",
+    subtopic: "Integration identities",
+    chapter: "Ch. 3-5",
+    latex: "\\int u\\,dv = uv - \\int v\\,du",
+    explanation:
+      "Standard integration-by-parts identity included on the Quiz 2 formula sheet.",
+    variables: [
+      { symbol: "u,v", meaning: "Differentiable/integrable functions", unit: "varies" },
+    ],
+    assumptions: [
+      "Functions are sufficiently smooth",
+    ],
+    useCases: [
+      "Derivations involving products of functions",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [],
+    problemTypes: [
+      "Derivation support",
+    ],
+    tags: [
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
+  },
+  {
     id: "natural-frequency",
     title: "Natural Frequency (Undamped SDOF)",
     topic: "vibration-parameters",
@@ -748,72 +880,137 @@ export const formulas: FormulaEntry[] = [
   },
   {
     id: "undamped-forced-response",
-    title: "Undamped Harmonic Steady-State Response",
+    title: "Undamped Harmonic Forced Response with Initial Conditions",
     topic: "forced-vibration-sdof",
     subtopic: "Undamped harmonic forcing",
-    chapter: "Ch. 4",
-    latex: "x(t) = X\\cos(\\omega t - \\phi), \\quad X = \\frac{F_0/k}{1 - r^2}, \\quad r = \\frac{\\omega}{\\omega_n}",
+    chapter: "Ch. 3",
+    latex: "m\\ddot{x}+kx=F_0\\cos\\omega t,\\quad x(t)=\\left(x_0-\\frac{F_0}{k-m\\omega^2}\\right)\\cos\\omega_n t+\\frac{\\dot{x}_0}{\\omega_n}\\sin\\omega_n t+\\frac{F_0}{k-m\\omega^2}\\cos\\omega t",
     explanation:
-      "Steady-state displacement amplitude for harmonic force F₀ cos(ωt) on an undamped SDOF system.",
+      "Complete undamped harmonic-force response: free-response terms from initial conditions plus the particular harmonic response.",
     variables: [
-      { symbol: "X", meaning: "Steady-state amplitude", unit: "m" },
       { symbol: "F_0", meaning: "Force amplitude", unit: "N" },
-      { symbol: "r", meaning: "Frequency ratio ω/ω_n", unit: "—" },
+      { symbol: "\\omega", meaning: "Forcing frequency", unit: "rad/s" },
+      { symbol: "x_0, \\dot{x}_0", meaning: "Initial displacement and velocity", unit: "m, m/s" },
+      { symbol: "\\omega_n", meaning: "Natural frequency", unit: "rad/s" },
     ],
-    assumptions: ["Undamped", "Harmonic forcing", "Steady state reached"],
-    useCases: ["Resonance analysis (r → 1)", "Undamped magnification"],
-    notFor: ["Transient response", "Damped systems"],
-    commonMistakes: ["Using r² in denominator as 1 + r²", "Ignoring phase jump at resonance"],
-    relatedFormulaIds: ["magnification-factor-undamped", "phase-angle"],
-    problemTypes: ["Harmonic forcing, undamped"],
-    tags: ["SDOF", "Forced vibration"],
-    source: [{ sheet: "Midterm formula sheet", page: 2 }],
+    assumptions: [
+      "Undamped SDOF",
+      "Harmonic force on the mass",
+      "ω ≠ ω_n for this closed form",
+    ],
+    useCases: [
+      "Undamped forced-response initial-value problems",
+    ],
+    notFor: [
+      "Damped systems",
+      "Exact undamped resonance",
+    ],
+    commonMistakes: [
+      "Using this expression at ω = ω_n",
+    ],
+    relatedFormulaIds: [
+      "magnification-factor-undamped",
+      "natural-frequency",
+    ],
+    problemTypes: [
+      "Undamped harmonic force",
+      "Initial-condition response",
+    ],
+    tags: [
+      "SDOF",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }],
   },
   {
     id: "magnification-factor-undamped",
     title: "Dynamic Magnification Factor (Undamped)",
     topic: "forced-vibration-sdof",
     subtopic: "Magnification factor",
-    chapter: "Ch. 4",
-    latex: "M = \\frac{X}{X_{st}} = \\frac{1}{|1 - r^2|}, \\quad X_{st} = \\frac{F_0}{k}",
+    chapter: "Ch. 3",
+    latex: "\\frac{X}{\\delta_{st}}=\\frac{1}{1-\\left(\\frac{\\omega}{\\omega_n}\\right)^2}=\\frac{1}{1-r^2},\\quad \\delta_{st}=\\frac{F_0}{k}",
     explanation:
-      "Ratio of dynamic displacement amplitude to static deflection under F₀. Blows up at resonance (r = 1).",
+      "Quiz 2 sheet form of undamped dynamic magnification. The sign represents phase relative to force; magnitude becomes unbounded at r = 1.",
     variables: [
-      { symbol: "M", meaning: "Magnification factor", unit: "—" },
-      { symbol: "X_{st}", meaning: "Static deflection F₀/k", unit: "m" },
-      { symbol: "r", meaning: "Frequency ratio", unit: "—" },
+      { symbol: "X", meaning: "Steady-state amplitude", unit: "m" },
+      { symbol: "\\delta_{st}", meaning: "Static deflection F₀/k", unit: "m" },
+      { symbol: "r", meaning: "Frequency ratio ω/ω_n", unit: "—" },
     ],
-    assumptions: ["Undamped", "Harmonic forcing", "Steady state"],
-    useCases: ["Resonance severity estimation"],
-    notFor: ["Damped systems (use damped M)"],
-    commonMistakes: ["Forgetting absolute value / sign change below and above resonance"],
-    relatedFormulaIds: ["undamped-forced-response", "magnification-factor"],
-    problemTypes: ["Resonance problems"],
-    tags: ["SDOF", "Forced vibration"],
-    source: [{ sheet: "Midterm formula sheet", page: 2 }],
+    assumptions: [
+      "Undamped SDOF",
+      "Harmonic force",
+      "Steady-state particular response",
+    ],
+    useCases: [
+      "Comparing dynamic amplitude to static deflection",
+    ],
+    notFor: [
+      "Damped systems",
+      "Base excitation",
+    ],
+    commonMistakes: [
+      "Ignoring the sign/phase change across resonance",
+    ],
+    relatedFormulaIds: [
+      "undamped-forced-response",
+      "magnification-factor",
+    ],
+    problemTypes: [
+      "Magnification",
+      "Resonance",
+    ],
+    tags: [
+      "SDOF",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }],
   },
   {
     id: "damped-forced-amplitude",
     title: "Damped Harmonic Force Response Amplitude",
     topic: "forced-vibration-sdof",
     subtopic: "Viscously damped harmonic forcing",
-    chapter: "Ch. 4",
-    latex: "X = \\frac{F_0/k}{\\sqrt{(1-r^2)^2 + (2\\zeta r)^2}}",
+    chapter: "Ch. 3",
+    latex: "X=\\frac{F_0}{\\sqrt{(k-m\\omega^2)^2+c^2\\omega^2}}=\\frac{\\delta_{st}}{\\sqrt{(1-r^2)^2+(2\\zeta r)^2}}",
     explanation:
-      "Steady-state displacement amplitude for viscously damped SDOF under harmonic forcing.",
+      "Steady-state displacement amplitude for a viscously damped SDOF system under harmonic force.",
     variables: [
       { symbol: "X", meaning: "Steady-state amplitude", unit: "m" },
-      { symbol: "\\zeta", meaning: "Damping ratio", unit: "—" },
+      { symbol: "F_0", meaning: "Force amplitude", unit: "N" },
+      { symbol: "c", meaning: "Damping coefficient", unit: "N·s/m" },
       { symbol: "r", meaning: "Frequency ratio", unit: "—" },
+      { symbol: "\\delta_{st}", meaning: "Static deflection F₀/k", unit: "m" },
     ],
-    assumptions: ["Viscous damping", "Harmonic forcing", "Steady state"],
-    useCases: ["Practical forced vibration with finite amplitude at resonance"],
-    notFor: ["Transient or non-harmonic forcing"],
-    commonMistakes: ["Dropping the damping term (2ζr)²", "Using undamped formula when ζ is given"],
-    relatedFormulaIds: ["magnification-factor", "phase-angle"],
-    problemTypes: ["Damped harmonic response"],
-    tags: ["SDOF", "Forced vibration", "Damping"],
-    source: [{ sheet: "Midterm formula sheet", page: 3 }],
+    assumptions: [
+      "Viscous damping",
+      "Harmonic force on the mass",
+      "Steady state",
+    ],
+    useCases: [
+      "Damped harmonic force response",
+      "Computing amplitude at a forcing frequency",
+    ],
+    notFor: [
+      "Base excitation",
+      "Transient-only response",
+    ],
+    commonMistakes: [
+      "Using transmissibility instead of force magnification",
+    ],
+    relatedFormulaIds: [
+      "magnification-factor",
+      "phase-angle",
+      "damped-harmonic-total-response",
+    ],
+    problemTypes: [
+      "Damped harmonic response",
+    ],
+    tags: [
+      "SDOF",
+      "Forced vibration",
+      "Damping",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
   },
   {
     id: "magnification-factor",
@@ -843,26 +1040,129 @@ export const formulas: FormulaEntry[] = [
     title: "Phase Angle (Harmonic Forcing)",
     topic: "forced-vibration-sdof",
     subtopic: "Phase angle",
-    chapter: "Ch. 4",
-    latex: "\\phi = \\tan^{-1}\\left(\\frac{2\\zeta r}{1 - r^2}\\right)",
+    chapter: "Ch. 3",
+    latex: "\\phi=\\tan^{-1}\\left(\\frac{c\\omega}{k-m\\omega^2}\\right)=\\tan^{-1}\\left(\\frac{2\\zeta r}{1-r^2}\\right)",
     explanation:
       "Phase lag between harmonic force and steady-state displacement response.",
     variables: [
       { symbol: "\\phi", meaning: "Phase angle", unit: "rad" },
+      { symbol: "c", meaning: "Damping coefficient", unit: "N·s/m" },
       { symbol: "r", meaning: "Frequency ratio", unit: "—" },
       { symbol: "\\zeta", meaning: "Damping ratio", unit: "—" },
     ],
-    assumptions: ["Viscous damping", "Harmonic forcing", "Steady state"],
-    useCases: ["Determining whether response leads or lags forcing"],
-    notFor: ["Free vibration (no phase relative to force)"],
+    assumptions: [
+      "Viscous damping",
+      "Harmonic force on the mass",
+      "Steady state",
+    ],
+    useCases: [
+      "Determining response phase relative to force",
+    ],
+    notFor: [
+      "Free vibration",
+      "Base excitation phase (use base-excitation phase formula)",
+    ],
     commonMistakes: [
-      "Inverting numerator and denominator",
       "Not accounting for quadrant when r > 1",
     ],
-    relatedFormulaIds: ["damped-forced-amplitude", "magnification-factor"],
-    problemTypes: ["Phase relationship problems"],
-    tags: ["SDOF", "Forced vibration", "Conceptual"],
-    source: [{ sheet: "Midterm formula sheet", page: 3 }],
+    relatedFormulaIds: [
+      "damped-forced-amplitude",
+      "magnification-factor",
+    ],
+    problemTypes: [
+      "Phase relationship",
+    ],
+    tags: [
+      "SDOF",
+      "Forced vibration",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+  },
+  {
+    id: "damped-harmonic-total-response",
+    title: "Damped Harmonic Total Response",
+    topic: "forced-vibration-sdof",
+    subtopic: "Viscously damped harmonic forcing",
+    chapter: "Ch. 3",
+    latex: "m\\ddot{x}+c\\dot{x}+kx=F_0\\cos\\omega t,\\quad x(t)=x_h+x_p=X_0e^{-\\zeta\\omega_n t}\\cos(\\omega_d t-\\phi_0)+X\\cos(\\omega t-\\phi)",
+    explanation:
+      "Total response under damped harmonic forcing: decaying homogeneous part plus steady-state particular part.",
+    variables: [
+      { symbol: "X_0", meaning: "Transient amplitude", unit: "m" },
+      { symbol: "\\phi_0", meaning: "Transient phase", unit: "rad" },
+      { symbol: "X", meaning: "Steady-state amplitude", unit: "m" },
+      { symbol: "\\phi", meaning: "Steady-state phase", unit: "rad" },
+    ],
+    assumptions: [
+      "Linear viscously damped SDOF",
+      "Harmonic force on the mass",
+    ],
+    useCases: [
+      "Combining transient and steady-state response",
+    ],
+    notFor: [
+      "Base excitation",
+    ],
+    commonMistakes: [
+      "Using only x_p when initial-condition transient matters",
+    ],
+    relatedFormulaIds: [
+      "damped-harmonic-transient-constants",
+      "damped-forced-amplitude",
+      "phase-angle",
+    ],
+    problemTypes: [
+      "Damped harmonic total response",
+    ],
+    tags: [
+      "SDOF",
+      "Forced vibration",
+      "Damping",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }],
+  },
+  {
+    id: "damped-harmonic-transient-constants",
+    title: "Damped Harmonic Transient Constants",
+    topic: "forced-vibration-sdof",
+    subtopic: "Viscously damped harmonic forcing",
+    chapter: "Ch. 3",
+    latex: "X_0=\\left[(x_0-X\\cos\\phi)^2+\\frac{(\\zeta\\omega_nx_0+\\dot{x}_0-\\zeta\\omega_nX\\cos\\phi-\\omega X\\sin\\phi)^2}{\\omega_d^2}\\right]^{1/2},\\quad \\phi_0=\\tan^{-1}\\left(\\frac{\\zeta\\omega_nx_0+\\dot{x}_0-\\zeta\\omega_nX\\cos\\phi-\\omega X\\sin\\phi}{\\omega_d(x_0-X\\cos\\phi)}\\right)",
+    explanation:
+      "Initial-condition constants for the transient part of the damped harmonic total response.",
+    variables: [
+      { symbol: "X_0", meaning: "Transient amplitude", unit: "m" },
+      { symbol: "\\phi_0", meaning: "Transient phase", unit: "rad" },
+      { symbol: "X,\\phi", meaning: "Steady-state amplitude and phase", unit: "m, rad" },
+    ],
+    assumptions: [
+      "0 < ζ < 1",
+      "Damped harmonic response written in total-response form",
+    ],
+    useCases: [
+      "Applying initial conditions to damped forced vibration",
+    ],
+    notFor: [
+      "Steady-state-only problems",
+    ],
+    commonMistakes: [
+      "Using these constants before computing X and φ",
+    ],
+    relatedFormulaIds: [
+      "damped-harmonic-total-response",
+      "damped-forced-amplitude",
+      "phase-angle",
+    ],
+    problemTypes: [
+      "Forced-vibration initial conditions",
+    ],
+    tags: [
+      "SDOF",
+      "Forced vibration",
+      "Damping",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
   },
   {
     id: "transmissibility-absolute",
@@ -913,6 +1213,170 @@ export const formulas: FormulaEntry[] = [
     source: [{ sheet: "Midterm formula sheet", page: 4 }],
   },
   {
+    id: "base-excitation-eom",
+    title: "Base Excitation Equation of Motion",
+    topic: "base-excitation-isolation",
+    subtopic: "Vibration isolation",
+    chapter: "Ch. 4",
+    latex: "m\\ddot{x}+c(\\dot{x}-\\dot{y})+k(x-y)=0",
+    explanation:
+      "Equation of motion for an SDOF system subjected to base displacement y(t), written in absolute coordinate x(t).",
+    variables: [
+      { symbol: "x", meaning: "Absolute mass displacement", unit: "m" },
+      { symbol: "y", meaning: "Base displacement", unit: "m" },
+      { symbol: "m,c,k", meaning: "Mass, damping, stiffness", unit: "various" },
+    ],
+    assumptions: [
+      "Linear SDOF",
+      "Viscous damping",
+      "Base motion input",
+    ],
+    useCases: [
+      "Starting point for base-excitation transmissibility",
+    ],
+    notFor: [
+      "Direct force excitation",
+    ],
+    commonMistakes: [
+      "Using force-excitation EOM for base motion",
+    ],
+    relatedFormulaIds: [
+      "transmissibility-absolute",
+      "relative-motion-eom",
+    ],
+    problemTypes: [
+      "Base excitation modeling",
+    ],
+    tags: [
+      "SDOF",
+      "Base excitation",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+  },
+  {
+    id: "base-excitation-phase",
+    title: "Absolute Motion Phase for Base Excitation",
+    topic: "base-excitation-isolation",
+    subtopic: "Absolute motion transmissibility",
+    chapter: "Ch. 4",
+    latex: "\\phi=\\tan^{-1}\\left(\\frac{mc\\omega^3}{k(k-m\\omega^2)+(c\\omega)^2}\\right)=\\tan^{-1}\\left(\\frac{2\\zeta r^3}{1+(4\\zeta^2-1)r^2}\\right)",
+    explanation:
+      "Phase angle for absolute displacement response under harmonic base excitation.",
+    variables: [
+      { symbol: "\\phi", meaning: "Phase lag", unit: "rad" },
+      { symbol: "r", meaning: "Frequency ratio", unit: "—" },
+      { symbol: "\\zeta", meaning: "Damping ratio", unit: "—" },
+    ],
+    assumptions: [
+      "Harmonic base excitation",
+      "Steady state",
+      "Viscous damping",
+    ],
+    useCases: [
+      "Determining phase of absolute motion relative to base motion",
+    ],
+    notFor: [
+      "Force excitation phase",
+    ],
+    commonMistakes: [
+      "Using force-response phase angle for base excitation",
+    ],
+    relatedFormulaIds: [
+      "transmissibility-absolute",
+    ],
+    problemTypes: [
+      "Base excitation phase",
+    ],
+    tags: [
+      "SDOF",
+      "Base excitation",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+  },
+  {
+    id: "relative-motion-eom",
+    title: "Relative Motion Equation for Base Excitation",
+    topic: "base-excitation-isolation",
+    subtopic: "Relative motion",
+    chapter: "Ch. 4",
+    latex: "z=x-y,\\quad m\\ddot{z}+c\\dot{z}+kz=-m\\ddot{y}",
+    explanation:
+      "Relative coordinate formulation for base excitation, where z is mass motion relative to the base.",
+    variables: [
+      { symbol: "z", meaning: "Relative displacement x-y", unit: "m" },
+      { symbol: "y", meaning: "Base displacement", unit: "m" },
+    ],
+    assumptions: [
+      "Linear SDOF",
+      "Base acceleration input",
+    ],
+    useCases: [
+      "Computing spring/damper deformation under base motion",
+    ],
+    notFor: [
+      "Absolute motion transmissibility without relative deformation",
+    ],
+    commonMistakes: [
+      "Confusing x with z",
+    ],
+    relatedFormulaIds: [
+      "transmissibility-relative",
+      "base-excitation-eom",
+    ],
+    problemTypes: [
+      "Relative base-excitation response",
+    ],
+    tags: [
+      "SDOF",
+      "Base excitation",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+  },
+  {
+    id: "relative-motion-phase",
+    title: "Relative Motion Phase for Base Excitation",
+    topic: "base-excitation-isolation",
+    subtopic: "Relative motion",
+    chapter: "Ch. 4",
+    latex: "\\phi_1=\\tan^{-1}\\left(\\frac{c\\omega}{k-m\\omega^2}\\right)=\\tan^{-1}\\left(\\frac{2\\zeta r}{1-r^2}\\right)",
+    explanation:
+      "Phase angle for relative displacement z under harmonic base excitation.",
+    variables: [
+      { symbol: "\\phi_1", meaning: "Relative-motion phase angle", unit: "rad" },
+      { symbol: "r", meaning: "Frequency ratio", unit: "—" },
+      { symbol: "\\zeta", meaning: "Damping ratio", unit: "—" },
+    ],
+    assumptions: [
+      "Harmonic base excitation",
+      "Steady state",
+    ],
+    useCases: [
+      "Phase of relative displacement response",
+    ],
+    notFor: [
+      "Absolute motion phase",
+    ],
+    commonMistakes: [
+      "Mixing absolute and relative phase definitions",
+    ],
+    relatedFormulaIds: [
+      "transmissibility-relative",
+      "relative-motion-eom",
+    ],
+    problemTypes: [
+      "Relative base-excitation response",
+    ],
+    tags: [
+      "SDOF",
+      "Base excitation",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+  },
+  {
     id: "coulomb-equivalent-damping",
     title: "Equivalent Viscous Damping (Coulomb Friction)",
     topic: "nonviscous-coulomb-damping",
@@ -959,116 +1423,460 @@ export const formulas: FormulaEntry[] = [
     source: [{ sheet: "Quiz 1 formula sheet", page: 3 }],
   },
   {
+    id: "coulomb-harmonic-amplitude",
+    title: "Coulomb Damping Harmonic Response Amplitude",
+    topic: "nonviscous-coulomb-damping",
+    subtopic: "Coulomb damping response",
+    chapter: "Ch. 3",
+    latex: "X=\\frac{F_0}{k}\\left[\\frac{1-\\left(\\frac{4\\mu N}{\\pi F_0}\\right)^2}{\\left(1-\\frac{\\omega^2}{\\omega_n^2}\\right)^2}\\right]^{1/2}",
+    explanation:
+      "Approximate steady-state amplitude for a harmonically forced SDOF system with Coulomb damping.",
+    variables: [
+      { symbol: "X", meaning: "Response amplitude", unit: "m" },
+      { symbol: "F_0", meaning: "Force amplitude", unit: "N" },
+      { symbol: "\\mu N", meaning: "Friction force magnitude", unit: "N" },
+    ],
+    assumptions: [
+      "Coulomb friction model",
+      "Harmonic force",
+      "Equivalent energy approach",
+    ],
+    useCases: [
+      "Dry-friction forced vibration amplitude",
+    ],
+    notFor: [
+      "Pure viscous damping",
+    ],
+    commonMistakes: [
+      "Using this when 4μN/(πF₀) exceeds 1",
+    ],
+    relatedFormulaIds: [
+      "coulomb-equivalent-damping",
+      "coulomb-harmonic-phase",
+    ],
+    problemTypes: [
+      "Dry friction forced response",
+    ],
+    tags: [
+      "SDOF",
+      "Damping",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
+  },
+  {
+    id: "coulomb-harmonic-phase",
+    title: "Coulomb Damping Harmonic Response Phase",
+    topic: "nonviscous-coulomb-damping",
+    subtopic: "Coulomb damping response",
+    chapter: "Ch. 3",
+    latex: "\\phi=\\tan^{-1}\\left(\\frac{\\frac{4\\mu N}{\\pi kX}}{1-\\frac{\\omega^2}{\\omega_n^2}}\\right)=\\tan^{-1}\\left(\\frac{\\pm\\frac{4\\mu N}{\\pi F_0}}{\\sqrt{1-\\left(\\frac{4\\mu N}{\\pi F_0}\\right)^2}}\\right)",
+    explanation:
+      "Approximate phase relation for Coulomb-damped harmonic response.",
+    variables: [
+      { symbol: "\\phi", meaning: "Phase angle", unit: "rad" },
+      { symbol: "X", meaning: "Response amplitude", unit: "m" },
+      { symbol: "\\mu N", meaning: "Friction force magnitude", unit: "N" },
+    ],
+    assumptions: [
+      "Coulomb damping",
+      "Harmonic steady-state response",
+    ],
+    useCases: [
+      "Dry-friction phase estimation",
+    ],
+    notFor: [
+      "Viscous phase-angle calculations",
+    ],
+    commonMistakes: [
+      "Ignoring sign convention for friction direction",
+    ],
+    relatedFormulaIds: [
+      "coulomb-harmonic-amplitude",
+      "coulomb-equivalent-damping",
+    ],
+    problemTypes: [
+      "Dry friction forced response",
+    ],
+    tags: [
+      "SDOF",
+      "Damping",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
+  },
+  {
     id: "fourier-series",
     title: "Fourier Series Representation",
     topic: "general-forcing",
     subtopic: "Fourier series",
-    chapter: "Ch. 5",
-    latex: "F(t) = a_0 + \\sum_{n=1}^{\\infty}\\left[a_n\\cos(n\\omega t) + b_n\\sin(n\\omega t)\\right]",
+    chapter: "Ch. 4-5",
+    latex: "F(t)=\\frac{a_0}{2}+\\sum_{j=1}^{\\infty}\\left[a_j\\cos(j\\omega t)+b_j\\sin(j\\omega t)\\right]",
     explanation:
-      "Expands a periodic forcing function into harmonic components for superposition analysis.",
+      "Quiz 2 Fourier series convention for periodic forcing.",
     variables: [
       { symbol: "F(t)", meaning: "Periodic forcing", unit: "N" },
+      { symbol: "a_0,a_j,b_j", meaning: "Fourier coefficients", unit: "N" },
       { symbol: "\\omega", meaning: "Fundamental frequency", unit: "rad/s" },
-      { symbol: "a_n, b_n", meaning: "Fourier coefficients", unit: "N" },
     ],
-    assumptions: ["Periodic forcing", "Piecewise continuous", "Linear system"],
-    useCases: ["Square wave, sawtooth, and general periodic forcing"],
-    notFor: ["Non-periodic transients without frequency-domain methods"],
-    commonMistakes: ["Using wrong integration limits (should be one period)"],
-    relatedFormulaIds: ["fourier-coefficients", "discrete-fourier-coefficients"],
-    problemTypes: ["Periodic forcing expansion"],
-    tags: ["Fourier", "Forced vibration", "Conceptual"],
-    source: [{ sheet: "Midterm formula sheet", page: 5 }],
+    assumptions: [
+      "Periodic forcing",
+      "Piecewise continuous forcing",
+      "Linear system for superposition",
+    ],
+    useCases: [
+      "Representing non-sinusoidal periodic forcing",
+    ],
+    notFor: [
+      "Non-periodic transient forcing",
+    ],
+    commonMistakes: [
+      "Mixing a₀ and a₀/2 conventions",
+    ],
+    relatedFormulaIds: [
+      "fourier-coefficients",
+      "second-order-fourier-response",
+    ],
+    problemTypes: [
+      "Periodic forcing expansion",
+    ],
+    tags: [
+      "Fourier",
+      "Forced vibration",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
   },
   {
     id: "fourier-coefficients",
     title: "Fourier Coefficients (Continuous)",
     topic: "general-forcing",
     subtopic: "Fourier series",
-    chapter: "Ch. 5",
-    latex: "a_n = \\frac{2}{T}\\int_0^T F(t)\\cos(n\\omega t)\\,dt, \\quad b_n = \\frac{2}{T}\\int_0^T F(t)\\sin(n\\omega t)\\,dt",
+    chapter: "Ch. 4-5",
+    latex: "a_j=\\frac{2}{\\tau}\\int_0^\\tau F(t)\\cos(j\\omega t)\\,dt,\\quad b_j=\\frac{2}{\\tau}\\int_0^\\tau F(t)\\sin(j\\omega t)\\,dt",
     explanation:
-      "Integrals over one period T to compute harmonic content of periodic forcing.",
+      "Continuous Fourier coefficient formulas over one period τ.",
     variables: [
-      { symbol: "T", meaning: "Period", unit: "s" },
-      { symbol: "a_n, b_n", meaning: "Cosine and sine coefficients", unit: "N" },
+      { symbol: "\\tau", meaning: "Period", unit: "s" },
+      { symbol: "a_j,b_j", meaning: "Fourier coefficients", unit: "N" },
+      { symbol: "j", meaning: "Harmonic index", unit: "—" },
     ],
-    assumptions: ["Periodic F(t) with period T", "ω = 2π/T"],
-    useCases: ["Computing individual harmonic amplitudes"],
-    notFor: ["Non-periodic signals"],
-    commonMistakes: ["Wrong limits or forgetting 2/T factor"],
-    relatedFormulaIds: ["fourier-series", "discrete-fourier-coefficients"],
-    problemTypes: ["Fourier coefficient calculation"],
-    tags: ["Fourier", "Forced vibration"],
-    source: [{ sheet: "Midterm formula sheet", page: 5 }],
+    assumptions: [
+      "F(t) periodic with period τ",
+      "ω = 2π/τ",
+    ],
+    useCases: [
+      "Computing harmonic force components",
+    ],
+    notFor: [
+      "Non-periodic forcing",
+    ],
+    commonMistakes: [
+      "Wrong integration interval or coefficient convention",
+    ],
+    relatedFormulaIds: [
+      "fourier-series",
+      "discrete-fourier-coefficients",
+    ],
+    problemTypes: [
+      "Fourier coefficient calculation",
+    ],
+    tags: [
+      "Fourier",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
   },
   {
     id: "discrete-fourier-coefficients",
     title: "Discrete Fourier Coefficients",
     topic: "general-forcing",
     subtopic: "Discrete Fourier series",
-    chapter: "Ch. 5",
-    latex: "a_n = \\frac{2}{N}\\sum_{k=0}^{N-1} F_k \\cos\\!\\left(\\frac{2\\pi n k}{N}\\right), \\quad b_n = \\frac{2}{N}\\sum_{k=0}^{N-1} F_k \\sin\\!\\left(\\frac{2\\pi n k}{N}\\right)",
+    chapter: "Ch. 4-5",
+    latex: "a_0=\\frac{2}{N}\\sum_{i=1}^{N}F_i,\\quad a_j=\\frac{2}{N}\\sum_{i=1}^{N}F_i\\cos\\left(\\frac{2j\\pi t_i}{\\tau}\\right),\\quad b_j=\\frac{2}{N}\\sum_{i=1}^{N}F_i\\sin\\left(\\frac{2j\\pi t_i}{\\tau}\\right)",
     explanation:
-      "Discrete form of Fourier coefficients when forcing is sampled at N equally spaced points over one period.",
+      "Discrete Fourier coefficients for N sampled force values over one period.",
     variables: [
-      { symbol: "N", meaning: "Number of samples per period", unit: "—" },
-      { symbol: "F_k", meaning: "Sampled forcing values", unit: "N" },
+      { symbol: "N", meaning: "Number of samples", unit: "—" },
+      { symbol: "F_i", meaning: "Sampled force value", unit: "N" },
+      { symbol: "t_i", meaning: "Sample time", unit: "s" },
+      { symbol: "\\tau", meaning: "Period", unit: "s" },
     ],
-    assumptions: ["Equally spaced samples over one full period"],
-    useCases: ["Numerical harmonic analysis of tabulated forcing data"],
-    notFor: ["Continuous analytic functions (use integral form)"],
-    commonMistakes: ["Summing over wrong index range", "Non-uniform sampling"],
-    relatedFormulaIds: ["fourier-coefficients", "fourier-series"],
-    problemTypes: ["Numerical Fourier analysis"],
-    tags: ["Fourier", "Forced vibration"],
-    source: [{ sheet: "Midterm formula sheet", page: 5 }],
+    assumptions: [
+      "Samples cover one period",
+      "Uniform sampling is typically assumed",
+    ],
+    useCases: [
+      "Numerical harmonic analysis of tabulated force data",
+    ],
+    notFor: [
+      "Continuous analytic calculation when integral form is easier",
+    ],
+    commonMistakes: [
+      "Indexing samples inconsistently",
+    ],
+    relatedFormulaIds: [
+      "fourier-series",
+      "fourier-coefficients",
+      "second-order-fourier-response",
+    ],
+    problemTypes: [
+      "Numerical Fourier analysis",
+    ],
+    tags: [
+      "Fourier",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }],
+  },
+  {
+    id: "first-order-fourier-response",
+    title: "First-Order System Fourier Response",
+    topic: "general-forcing",
+    subtopic: "First-order harmonic response",
+    chapter: "Ch. 4-5",
+    latex: "c\\dot{x}+k(x-y)=0,\\quad x(t)=\\left[x_0-\\frac{A_0}{a}+\\sum_{j=1}^{\\infty}(X_j\\sin\\phi_j-Y_j\\cos\\phi_j)\\right]e^{-at}+\\frac{A_0}{a}+\\sum_{j=1}^{\\infty}\\left[X_j\\sin(j\\omega t-\\phi_j)+Y_j\\cos(j\\omega t-\\phi_j)\\right]",
+    explanation:
+      "Quiz 2 first-order response form for periodic excitation represented by Fourier coefficients.",
+    variables: [
+      { symbol: "a", meaning: "k/c", unit: "1/s" },
+      { symbol: "A_j,B_j", meaning: "Scaled Fourier coefficients", unit: "varies" },
+      { symbol: "X_j,Y_j", meaning: "Harmonic response amplitudes", unit: "varies" },
+    ],
+    assumptions: [
+      "First-order linear system",
+      "Periodic excitation",
+      "Fourier representation",
+    ],
+    useCases: [
+      "Periodic response of first-order damper/spring model",
+    ],
+    notFor: [
+      "Second-order mass-spring-damper response",
+    ],
+    commonMistakes: [
+      "Using second-order magnification factors for a first-order model",
+    ],
+    relatedFormulaIds: [
+      "first-order-fourier-definitions",
+      "fourier-series",
+    ],
+    problemTypes: [
+      "First-order harmonic response",
+    ],
+    tags: [
+      "Fourier",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
+  },
+  {
+    id: "first-order-fourier-definitions",
+    title: "First-Order Fourier Response Definitions",
+    topic: "general-forcing",
+    subtopic: "First-order harmonic response",
+    chapter: "Ch. 4-5",
+    latex: "a=\\frac{k}{c},\\quad A_0=\\frac{aa_0}{2},\\quad A_j=aa_j,\\quad B_j=ab_j,\\quad X_j=\\frac{A_j}{\\sqrt{a^2+(j\\omega)^2}},\\quad Y_j=\\frac{B_j}{\\sqrt{a^2+(j\\omega)^2}},\\quad \\phi_j=\\tan^{-1}\\left(\\frac{j\\omega}{a}\\right)",
+    explanation:
+      "Definitions used with the first-order Fourier response expression.",
+    variables: [
+      { symbol: "a", meaning: "First-order decay rate k/c", unit: "1/s" },
+      { symbol: "A_j,B_j", meaning: "Scaled Fourier coefficients", unit: "varies" },
+      { symbol: "\\phi_j", meaning: "Harmonic phase angle", unit: "rad" },
+    ],
+    assumptions: [
+      "Same notation as first-order Fourier response",
+    ],
+    useCases: [
+      "Computing each harmonic term in a first-order response",
+    ],
+    notFor: [
+      "Second-order SDOF response",
+    ],
+    commonMistakes: [
+      "Confusing a=k/c with Fourier coefficient a_j",
+    ],
+    relatedFormulaIds: [
+      "first-order-fourier-response",
+      "fourier-coefficients",
+    ],
+    problemTypes: [
+      "First-order harmonic response",
+    ],
+    tags: [
+      "Fourier",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
+  },
+  {
+    id: "second-order-fourier-response",
+    title: "Second-Order SDOF Fourier Response",
+    topic: "general-forcing",
+    subtopic: "Second-order harmonic response",
+    chapter: "Ch. 4-5",
+    latex: "x_p(t)=\\frac{a_0}{2k}+\\sum_{j=1}^{\\infty}\\frac{a_j/k}{\\sqrt{(1-j^2r^2)^2+(2\\zeta jr)^2}}\\cos(j\\omega t-\\phi_j)+\\sum_{j=1}^{\\infty}\\frac{b_j/k}{\\sqrt{(1-j^2r^2)^2+(2\\zeta jr)^2}}\\sin(j\\omega t-\\phi_j)",
+    explanation:
+      "Particular response of a damped second-order SDOF system to a periodic force via Fourier superposition.",
+    variables: [
+      { symbol: "a_j,b_j", meaning: "Fourier coefficients of force", unit: "N" },
+      { symbol: "r", meaning: "Fundamental frequency ratio 2π/(τω_n)", unit: "—" },
+      { symbol: "\\phi_j", meaning: "Phase for jth harmonic", unit: "rad" },
+    ],
+    assumptions: [
+      "Linear SDOF",
+      "Viscous damping",
+      "Periodic forcing",
+    ],
+    useCases: [
+      "Periodic force response by superposition of harmonic responses",
+    ],
+    notFor: [
+      "Nonlinear systems",
+    ],
+    commonMistakes: [
+      "Using r instead of jr inside harmonic terms",
+    ],
+    relatedFormulaIds: [
+      "second-order-fourier-phase",
+      "fourier-series",
+      "fourier-coefficients",
+    ],
+    problemTypes: [
+      "Second-order harmonic response",
+      "Superposition",
+    ],
+    tags: [
+      "Fourier",
+      "Forced vibration",
+      "Damping",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }],
+  },
+  {
+    id: "second-order-fourier-phase",
+    title: "Second-Order Fourier Harmonic Phase",
+    topic: "general-forcing",
+    subtopic: "Second-order harmonic response",
+    chapter: "Ch. 4-5",
+    latex: "\\phi_j=\\tan^{-1}\\left(\\frac{2\\zeta jr}{1-j^2r^2}\\right),\\quad r=\\frac{2\\pi}{\\tau\\omega_n}",
+    explanation:
+      "Phase angle for the jth harmonic in second-order Fourier response.",
+    variables: [
+      { symbol: "\\phi_j", meaning: "Phase of jth harmonic", unit: "rad" },
+      { symbol: "j", meaning: "Harmonic index", unit: "—" },
+      { symbol: "r", meaning: "Fundamental frequency ratio", unit: "—" },
+    ],
+    assumptions: [
+      "Linear damped SDOF",
+      "Fourier harmonic response",
+    ],
+    useCases: [
+      "Phase for each Fourier harmonic",
+    ],
+    notFor: [
+      "First-order response phase",
+    ],
+    commonMistakes: [
+      "Forgetting j multiplies r",
+    ],
+    relatedFormulaIds: [
+      "second-order-fourier-response",
+    ],
+    problemTypes: [
+      "Second-order harmonic response",
+    ],
+    tags: [
+      "Fourier",
+      "Forced vibration",
+      "Damping",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }],
   },
   {
     id: "impulse-response-undamped",
-    title: "Impulse Response (Undamped)",
+    title: "Impulse Response Function (Undamped)",
     topic: "impulse-step-response",
     subtopic: "Undamped and underdamped impulse response",
     chapter: "Ch. 5",
-    latex: "h(t) = \\frac{1}{m\\omega_n}\\sin(\\omega_n t), \\quad t \\geq 0",
+    latex: "g(t)=\\frac{1}{m\\omega_n}\\sin(\\omega_n t)",
     explanation:
-      "Response to a unit impulse (Dirac delta) on an undamped SDOF system. Foundation for Duhamel integral.",
+      "Unit impulse response for an undamped SDOF system.",
     variables: [
-      { symbol: "h(t)", meaning: "Impulse response function", unit: "s/kg" },
+      { symbol: "g(t)", meaning: "Impulse response function", unit: "s/kg" },
       { symbol: "m", meaning: "Mass", unit: "kg" },
       { symbol: "\\omega_n", meaning: "Natural frequency", unit: "rad/s" },
     ],
-    assumptions: ["Undamped", "Unit impulse", "Rest initial conditions before impulse"],
-    useCases: ["Convolution with arbitrary forcing", "Duhamel integral setup"],
-    notFor: ["Damped systems without underdamped form"],
-    commonMistakes: ["Missing 1/(mω_n) factor", "Using for t < 0"],
-    relatedFormulaIds: ["duhamel-integral", "impulse-response-underdamped"],
-    problemTypes: ["Impulse response", "Convolution"],
-    tags: ["SDOF", "Impulse", "Forced vibration"],
-    source: [{ sheet: "Final exam formula sheet", page: 1 }],
+    assumptions: [
+      "Undamped SDOF",
+      "Unit impulse",
+      "Causal response for t ≥ 0",
+    ],
+    useCases: [
+      "Duhamel integral with undamped impulse response",
+    ],
+    notFor: [
+      "Damped systems",
+    ],
+    commonMistakes: [
+      "Using g(t) for t < 0",
+    ],
+    relatedFormulaIds: [
+      "duhamel-integral",
+      "undamped-step-response",
+    ],
+    problemTypes: [
+      "Impulse response",
+      "Convolution",
+    ],
+    tags: [
+      "SDOF",
+      "Impulse",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
   },
   {
     id: "impulse-response-underdamped",
-    title: "Impulse Response (Underdamped)",
+    title: "Impulse Response Function (Underdamped)",
     topic: "impulse-step-response",
     subtopic: "Undamped and underdamped impulse response",
     chapter: "Ch. 5",
-    latex: "h(t) = \\frac{e^{-\\zeta\\omega_n t}}{m\\omega_d}\\sin(\\omega_d t), \\quad t \\geq 0",
+    latex: "g(t)=\\frac{e^{-\\zeta\\omega_n t}}{m\\omega_d}\\sin(\\omega_d t)",
     explanation:
-      "Impulse response for viscously damped underdamped SDOF system.",
+      "Unit impulse response for an underdamped viscously damped SDOF system.",
     variables: [
-      { symbol: "h(t)", meaning: "Impulse response", unit: "s/kg" },
+      { symbol: "g(t)", meaning: "Impulse response function", unit: "s/kg" },
       { symbol: "\\omega_d", meaning: "Damped natural frequency", unit: "rad/s" },
+      { symbol: "\\zeta", meaning: "Damping ratio", unit: "—" },
     ],
-    assumptions: ["0 < ζ < 1", "Unit impulse"],
-    useCases: ["General forcing via convolution/Duhamel"],
-    notFor: ["ζ ≥ 1 (use respective closed form)"],
-    commonMistakes: ["Using ω_n instead of ω_d in sine term"],
-    relatedFormulaIds: ["impulse-response-undamped", "duhamel-integral"],
-    problemTypes: ["Damped impulse response"],
-    tags: ["SDOF", "Impulse", "Damping"],
-    source: [{ sheet: "Final exam formula sheet", page: 1 }],
+    assumptions: [
+      "0 < ζ < 1",
+      "Unit impulse",
+      "Causal response for t ≥ 0",
+    ],
+    useCases: [
+      "Duhamel integral for damped SDOF response",
+    ],
+    notFor: [
+      "ζ ≥ 1 without modified impulse response",
+    ],
+    commonMistakes: [
+      "Using ω_n in the sine term",
+    ],
+    relatedFormulaIds: [
+      "duhamel-integral",
+      "step-response",
+    ],
+    problemTypes: [
+      "Damped impulse response",
+    ],
+    tags: [
+      "SDOF",
+      "Impulse",
+      "Damping",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
   },
   {
     id: "duhamel-integral",
@@ -1076,44 +1884,246 @@ export const formulas: FormulaEntry[] = [
     topic: "impulse-step-response",
     subtopic: "Duhamel integral",
     chapter: "Ch. 5",
-    latex: "x(t) = \\int_0^t F(\\tau)\\,h(t - \\tau)\\,d\\tau",
+    latex: "x(t)=\\int_0^t F(\\tau)g(t-\\tau)\\,d\\tau=\\int_0^t F(t-\\tau)g(\\tau)\\,d\\tau",
     explanation:
-      "Convolution of forcing with impulse response gives total response for arbitrary F(t) on a linear SDOF system.",
+      "Convolution of force history with impulse response for a linear SDOF system.",
     variables: [
-      { symbol: "x(t)", meaning: "Displacement response", unit: "m" },
-      { symbol: "F(\\tau)", meaning: "Forcing history", unit: "N" },
-      { symbol: "h(t)", meaning: "Impulse response", unit: "s/kg" },
+      { symbol: "x(t)", meaning: "Response displacement", unit: "m" },
+      { symbol: "F(\\tau)", meaning: "Force history", unit: "N" },
+      { symbol: "g(t)", meaning: "Impulse response", unit: "s/kg" },
     ],
-    assumptions: ["Linear system", "Known impulse response", "Rest ICs at t=0"],
-    useCases: ["Arbitrary time-varying forcing", "Step and impulse as special cases"],
-    notFor: ["Nonlinear systems", "Steady-state harmonic (use phasor method)"],
-    commonMistakes: ["Wrong convolution limits", "Using wrong h(t) for damping level"],
-    relatedFormulaIds: ["impulse-response-undamped", "step-response"],
-    problemTypes: ["General transient forcing"],
-    tags: ["SDOF", "Impulse", "Forced vibration"],
-    source: [{ sheet: "Final exam formula sheet", page: 2 }],
+    assumptions: [
+      "Linear system",
+      "Known impulse response",
+      "Usually rest initial conditions for forced contribution",
+    ],
+    useCases: [
+      "General forcing response",
+      "Deriving step response",
+    ],
+    notFor: [
+      "Nonlinear systems",
+    ],
+    commonMistakes: [
+      "Reversing convolution variables incorrectly",
+    ],
+    relatedFormulaIds: [
+      "impulse-response-undamped",
+      "impulse-response-underdamped",
+      "step-response",
+    ],
+    problemTypes: [
+      "General transient forcing",
+    ],
+    tags: [
+      "SDOF",
+      "Impulse",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
   },
   {
     id: "step-response",
-    title: "Step Response (Unit Step Force)",
+    title: "Underdamped Step Response",
     topic: "impulse-step-response",
     subtopic: "Step response",
     chapter: "Ch. 5",
-    latex: "x(t) = \\frac{1}{k}\\left[1 - e^{-\\zeta\\omega_n t}\\left(\\cos(\\omega_d t) + \\frac{\\zeta}{\\sqrt{1-\\zeta^2}}\\sin(\\omega_d t)\\right)\\right]",
+    latex: "x(t)=\\frac{F_0}{k}\\left[1-\\frac{e^{-\\zeta\\omega_n t}}{\\sqrt{1-\\zeta^2}}\\cos(\\omega_d t-\\varphi)\\right],\\quad \\varphi=\\tan^{-1}\\left(\\frac{\\zeta}{\\sqrt{1-\\zeta^2}}\\right)",
     explanation:
-      "Response to a suddenly applied constant force (unit step). Underdamped form shown.",
+      "Step response for a suddenly applied constant force F₀ on an underdamped SDOF system.",
     variables: [
-      { symbol: "x(t)", meaning: "Displacement", unit: "m" },
+      { symbol: "F_0", meaning: "Step force magnitude", unit: "N" },
       { symbol: "k", meaning: "Stiffness", unit: "N/m" },
+      { symbol: "\\varphi", meaning: "Phase angle in compact response form", unit: "rad" },
     ],
-    assumptions: ["Underdamped", "Unit step F(t) = F₀ u(t)", "Rest ICs"],
-    useCases: ["Sudden load application", "Special case of Duhamel integral"],
-    notFor: ["Harmonic steady state"],
-    commonMistakes: ["Using steady-state harmonic formulas", "Forgetting static offset F₀/k"],
-    relatedFormulaIds: ["duhamel-integral", "underdamped-free-response"],
-    problemTypes: ["Step forcing"],
-    tags: ["SDOF", "Impulse", "Forced vibration"],
-    source: [{ sheet: "Final exam formula sheet", page: 2 }],
+    assumptions: [
+      "Underdamped SDOF",
+      "Step force F₀ applied at t = 0",
+      "Rest initial conditions for the forced response",
+    ],
+    useCases: [
+      "Suddenly applied constant force",
+      "Special Duhamel integral result",
+    ],
+    notFor: [
+      "Harmonic steady-state response",
+    ],
+    commonMistakes: [
+      "Forgetting the static offset F₀/k",
+    ],
+    relatedFormulaIds: [
+      "duhamel-integral",
+      "impulse-response-underdamped",
+      "undamped-step-response",
+    ],
+    problemTypes: [
+      "Step forcing",
+    ],
+    tags: [
+      "SDOF",
+      "Impulse",
+      "Forced vibration",
+      "Damping",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+  },
+  {
+    id: "impulse-momentum-definition",
+    title: "Impulse of a Force over a Short Time",
+    topic: "impulse-step-response",
+    subtopic: "Delta function",
+    chapter: "Ch. 5",
+    latex: "\\hat{F}=\\int_t^{t+\\Delta t}F(t)\\,dt",
+    explanation:
+      "Impulse equals the integral of force over a short time interval.",
+    variables: [
+      { symbol: "\\hat{F}", meaning: "Impulse", unit: "N·s" },
+      { symbol: "F(t)", meaning: "Force", unit: "N" },
+      { symbol: "\\Delta t", meaning: "Short time interval", unit: "s" },
+    ],
+    assumptions: [
+      "Force acts over short duration",
+    ],
+    useCases: [
+      "Relating finite impulse to initial velocity jump",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "delta-function-properties",
+      "impulse-response-undamped",
+    ],
+    problemTypes: [
+      "Impulse loading",
+    ],
+    tags: [
+      "Impulse",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }],
+  },
+  {
+    id: "delta-function-properties",
+    title: "Dirac Delta Function Properties",
+    topic: "impulse-step-response",
+    subtopic: "Delta function",
+    chapter: "Ch. 5",
+    latex: "\\delta(t-\\tau)=0\\ (t\\ne\\tau),\\quad \\delta(t-\\tau)=\\infty\\ (t=\\tau),\\quad \\int_0^\\infty\\delta(t-\\tau)\\,dt=1,\\quad \\int_0^\\infty\\delta(t-\\tau)F(t)\\,dt=\\hat{F}(\\tau)",
+    explanation:
+      "Operational properties of the ideal impulse/delta function used in impulse response derivations.",
+    variables: [
+      { symbol: "\\delta(t-\\tau)", meaning: "Dirac delta centered at τ", unit: "1/s" },
+      { symbol: "\\hat{F}(\\tau)", meaning: "Impulse at time τ", unit: "N·s" },
+    ],
+    assumptions: [
+      "Idealized impulse model",
+    ],
+    useCases: [
+      "Impulse response and convolution derivations",
+    ],
+    notFor: [],
+    commonMistakes: [
+      "Treating δ as an ordinary finite-valued function",
+    ],
+    relatedFormulaIds: [
+      "duhamel-integral",
+      "impulse-momentum-definition",
+    ],
+    problemTypes: [
+      "Delta function",
+      "Impulse response",
+    ],
+    tags: [
+      "Impulse",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }],
+  },
+  {
+    id: "undamped-step-response",
+    title: "Undamped Step Response",
+    topic: "impulse-step-response",
+    subtopic: "Step response",
+    chapter: "Ch. 5",
+    latex: "x(t)=\\frac{F_0}{k}\\left[1-\\cos(\\omega_n t)\\right]",
+    explanation:
+      "Step response of an undamped SDOF system to a suddenly applied constant force F₀.",
+    variables: [
+      { symbol: "F_0", meaning: "Step force magnitude", unit: "N" },
+      { symbol: "k", meaning: "Stiffness", unit: "N/m" },
+      { symbol: "\\omega_n", meaning: "Natural frequency", unit: "rad/s" },
+    ],
+    assumptions: [
+      "Undamped SDOF",
+      "Step force at t=0",
+      "Rest initial conditions",
+    ],
+    useCases: [
+      "Suddenly applied constant force without damping",
+    ],
+    notFor: [
+      "Damped systems",
+    ],
+    commonMistakes: [
+      "Using damped step response when c = 0",
+    ],
+    relatedFormulaIds: [
+      "duhamel-integral",
+      "impulse-response-undamped",
+      "step-response",
+    ],
+    problemTypes: [
+      "Step forcing",
+    ],
+    tags: [
+      "SDOF",
+      "Impulse",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+  },
+  {
+    id: "base-excitation-duhamel-relative-response",
+    title: "Duhamel Integral for Base-Acceleration Relative Response",
+    topic: "impulse-step-response",
+    subtopic: "Duhamel integral",
+    chapter: "Ch. 5",
+    latex: "z(t)=-\\frac{1}{\\omega_d}\\int_0^t \\ddot{y}(\\tau)e^{-\\zeta\\omega_n(t-\\tau)}\\sin[\\omega_d(t-\\tau)]\\,d\\tau",
+    explanation:
+      "Relative response to arbitrary base acceleration using the underdamped impulse-response kernel.",
+    variables: [
+      { symbol: "z(t)", meaning: "Relative displacement", unit: "m" },
+      { symbol: "\\ddot{y}(\\tau)", meaning: "Base acceleration history", unit: "m/s²" },
+      { symbol: "\\omega_d", meaning: "Damped natural frequency", unit: "rad/s" },
+    ],
+    assumptions: [
+      "Underdamped SDOF",
+      "Base acceleration input",
+      "Linear system",
+    ],
+    useCases: [
+      "Arbitrary base-motion transient response",
+    ],
+    notFor: [
+      "Force input directly on mass",
+    ],
+    commonMistakes: [
+      "Missing the negative sign from effective inertia force",
+    ],
+    relatedFormulaIds: [
+      "relative-motion-eom",
+      "duhamel-integral",
+      "impulse-response-underdamped",
+    ],
+    problemTypes: [
+      "Base excitation transient",
+    ],
+    tags: [
+      "Base excitation",
+      "Impulse",
+      "Damping",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
   },
   {
     id: "two-dof-matrix-eom",
@@ -1121,68 +2131,316 @@ export const formulas: FormulaEntry[] = [
     topic: "two-dof-systems",
     subtopic: "Matrix equations of motion",
     chapter: "Ch. 6",
-    latex: "[M]\\{\\ddot{x}\\} + [C]\\{\\dot{x}\\} + [K]\\{x\\} = \\{F(t)\\}",
+    latex: "\\begin{bmatrix}m_1&0\\\\0&m_2\\end{bmatrix}\\ddot{\\vec{x}}+\\begin{bmatrix}c_1+c_2&-c_2\\\\-c_2&c_2+c_3\\end{bmatrix}\\dot{\\vec{x}}+\\begin{bmatrix}k_1+k_2&-k_2\\\\-k_2&k_2+k_3\\end{bmatrix}\\vec{x}=\\vec{f}(t)",
     explanation:
-      "General matrix form for linear two-degree-of-freedom (or n-DOF) vibration systems.",
+      "Matrix EOM for the standard two-mass, three-spring/damper coupled system on the Quiz 2 sheet.",
     variables: [
       { symbol: "[M]", meaning: "Mass matrix", unit: "kg" },
       { symbol: "[C]", meaning: "Damping matrix", unit: "N·s/m" },
       { symbol: "[K]", meaning: "Stiffness matrix", unit: "N/m" },
-      { symbol: "\\{x\\}", meaning: "Displacement vector", unit: "m" },
+      { symbol: "\\vec{x}", meaning: "Displacement vector", unit: "m" },
     ],
-    assumptions: ["Linear system", "Two coordinates defined", "Proportional or given damping"],
-    useCases: ["Coupled oscillator problems", "Setting up 2-DOF models"],
-    notFor: ["SDOF problems"],
-    commonMistakes: ["Incorrect coupling terms in [K]", "Dimension mismatch in matrices"],
-    relatedFormulaIds: ["two-dof-frequency-equation", "mode-shape-ratio"],
-    problemTypes: ["2-DOF modeling"],
-    tags: ["Two DOF", "Free vibration", "Conceptual"],
-    source: [{ sheet: "Final exam formula sheet", page: 3 }],
+    assumptions: [
+      "Linear 2DOF system",
+      "Topology matches the standard coupled system",
+    ],
+    useCases: [
+      "Setting up 2DOF matrix equations",
+    ],
+    notFor: [
+      "Different topology without rebuilding matrices",
+    ],
+    commonMistakes: [
+      "Using these matrices for a different spring/damper layout",
+    ],
+    relatedFormulaIds: [
+      "two-dof-scalar-eom",
+      "two-dof-frequency-equation",
+      "mode-shape-ratio",
+    ],
+    problemTypes: [
+      "2DOF modeling",
+    ],
+    tags: [
+      "Two DOF",
+      "Free vibration",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
   },
   {
     id: "two-dof-frequency-equation",
-    title: "Two-DOF Frequency Equation",
+    title: "Two-DOF Frequency Equation (Standard Coupled System)",
     topic: "two-dof-systems",
     subtopic: "Natural frequencies",
     chapter: "Ch. 6",
-    latex: "\\det\\left([K] - \\omega^2[M]\\right) = 0",
+    latex: "m_1m_2\\omega^4-\\left[(k_1+k_2)m_2+(k_2+k_3)m_1\\right]\\omega^2+\\left[(k_1+k_2)(k_2+k_3)-k_2^2\\right]=0",
     explanation:
-      "Characteristic equation yielding two natural frequencies ω₁ and ω₂ for undamped free vibration.",
+      "Characteristic equation for the undamped standard coupled 2DOF system from the Quiz 2 sheet.",
     variables: [
       { symbol: "\\omega", meaning: "Natural frequency", unit: "rad/s" },
-      { symbol: "[K]", meaning: "Stiffness matrix", unit: "N/m" },
-      { symbol: "[M]", meaning: "Mass matrix", unit: "kg" },
+      { symbol: "m_1,m_2", meaning: "Masses", unit: "kg" },
+      { symbol: "k_1,k_2,k_3", meaning: "Spring stiffnesses", unit: "N/m" },
     ],
-    assumptions: ["Undamped free vibration", "Proper DOF selection"],
-    useCases: ["Finding ω₁, ω₂ and mode shapes"],
-    notFor: ["SDOF", "Damped forced response without modal analysis"],
-    commonMistakes: ["Sign errors in [K] assembly", "Forgetting ω² factor"],
-    relatedFormulaIds: ["two-dof-matrix-eom", "mode-shape-ratio"],
-    problemTypes: ["Natural frequency of 2-DOF"],
-    tags: ["Two DOF", "Free vibration"],
-    source: [{ sheet: "Final exam formula sheet", page: 3 }],
+    assumptions: [
+      "Undamped free vibration",
+      "Standard coupled topology",
+    ],
+    useCases: [
+      "Finding natural frequencies for the standard 2DOF system",
+    ],
+    notFor: [
+      "Damped forced response without modal analysis",
+    ],
+    commonMistakes: [
+      "Sign errors in the ω² coefficient",
+    ],
+    relatedFormulaIds: [
+      "two-dof-natural-frequency-roots",
+      "mode-shape-ratio",
+    ],
+    problemTypes: [
+      "2DOF natural frequencies",
+    ],
+    tags: [
+      "Two DOF",
+      "Free vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
   },
   {
     id: "mode-shape-ratio",
-    title: "Mode Shape Ratio",
+    title: "Mode Shape Ratios for Standard Two-DOF System",
     topic: "two-dof-systems",
     subtopic: "Mode shape ratios",
     chapter: "Ch. 6",
-    latex: "\\frac{X_2}{X_1} = \\frac{k_{12}}{k_{22} - m_2\\omega^2}",
+    latex: "r_1=\\frac{X_2^{(1)}}{X_1^{(1)}}=\\frac{k_2}{-m_2\\omega_1^2+(k_2+k_3)},\\quad r_2=\\frac{X_2^{(2)}}{X_1^{(2)}}=\\frac{k_2}{-m_2\\omega_2^2+(k_2+k_3)}",
     explanation:
-      "Amplitude ratio between coordinates for a given mode at natural frequency ω. Specific form depends on system topology.",
+      "Mode-shape coordinate ratios for the standard coupled 2DOF system.",
     variables: [
-      { symbol: "X_1, X_2", meaning: "Modal amplitudes of DOF 1 and 2", unit: "m" },
-      { symbol: "\\omega", meaning: "Mode natural frequency", unit: "rad/s" },
+      { symbol: "r_1,r_2", meaning: "Mode shape ratios", unit: "—" },
+      { symbol: "\\omega_1,\\omega_2", meaning: "Natural frequencies", unit: "rad/s" },
     ],
-    assumptions: ["Undamped free vibration", "Harmonic motion at natural frequency"],
-    useCases: ["Sketching mode shapes", "Writing free vibration solution"],
-    notFor: ["Forced response without modal superposition"],
-    commonMistakes: ["Using wrong ω (must be ω₁ or ω₂ for each mode)"],
-    relatedFormulaIds: ["two-dof-frequency-equation"],
-    problemTypes: ["Mode shape determination"],
-    tags: ["Two DOF", "Free vibration", "Conceptual"],
-    source: [{ sheet: "Final exam formula sheet", page: 4 }],
+    assumptions: [
+      "Undamped free vibration",
+      "Standard coupled topology",
+    ],
+    useCases: [
+      "Sketching mode shapes",
+      "Writing 2DOF free response",
+    ],
+    notFor: [
+      "Different 2DOF topology without deriving ratios",
+    ],
+    commonMistakes: [
+      "Using ω₁ in the second mode or ω₂ in the first mode",
+    ],
+    relatedFormulaIds: [
+      "two-dof-frequency-equation",
+      "two-dof-free-response",
+    ],
+    problemTypes: [
+      "Mode shape determination",
+    ],
+    tags: [
+      "Two DOF",
+      "Free vibration",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
+  },
+  {
+    id: "two-dof-scalar-eom",
+    title: "Two-DOF Scalar Equations of Motion",
+    topic: "two-dof-systems",
+    subtopic: "Matrix equations of motion",
+    chapter: "Ch. 6",
+    latex: "m_1\\ddot{x}_1+(c_1+c_2)\\dot{x}_1-c_2\\dot{x}_2+(k_1+k_2)x_1-k_2x_2=f_1,\\quad m_2\\ddot{x}_2-c_2\\dot{x}_1+(c_2+c_3)\\dot{x}_2-k_2x_1+(k_2+k_3)x_2=f_2",
+    explanation:
+      "Scalar coupled equations corresponding to the standard 2DOF matrix system.",
+    variables: [
+      { symbol: "x_1,x_2", meaning: "Mass displacements", unit: "m" },
+      { symbol: "f_1,f_2", meaning: "Applied forces", unit: "N" },
+    ],
+    assumptions: [
+      "Standard coupled 2DOF topology",
+      "Linear springs/dampers",
+    ],
+    useCases: [
+      "Deriving/validating the matrix EOM",
+    ],
+    notFor: [
+      "Different topology without rebuilding equations",
+    ],
+    commonMistakes: [
+      "Missing negative coupling terms",
+    ],
+    relatedFormulaIds: [
+      "two-dof-matrix-eom",
+    ],
+    problemTypes: [
+      "2DOF modeling",
+    ],
+    tags: [
+      "Two DOF",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+  },
+  {
+    id: "two-dof-natural-frequency-roots",
+    title: "Closed-Form Two-DOF Natural Frequencies",
+    topic: "two-dof-systems",
+    subtopic: "Natural frequencies",
+    chapter: "Ch. 6",
+    latex: "\\omega_{1,2}^2=\\frac{1}{2}\\left[\\frac{(k_1+k_2)m_2+(k_2+k_3)m_1}{m_1m_2}\\right]\\pm\\frac{1}{2}\\left[\\left(\\frac{(k_1+k_2)m_2+(k_2+k_3)m_1}{m_1m_2}\\right)^2-4\\left(\\frac{(k_1+k_2)(k_2+k_3)-k_2^2}{m_1m_2}\\right)\\right]^{1/2}",
+    explanation:
+      "Closed-form roots for ω₁² and ω₂² of the standard undamped 2DOF frequency equation.",
+    variables: [
+      { symbol: "\\omega_1,\\omega_2", meaning: "Natural frequencies", unit: "rad/s" },
+    ],
+    assumptions: [
+      "Undamped standard 2DOF coupled system",
+    ],
+    useCases: [
+      "Computing modal frequencies from system parameters",
+    ],
+    notFor: [
+      "Nonstandard topology",
+    ],
+    commonMistakes: [
+      "Forgetting the square root applies to ω² roots",
+    ],
+    relatedFormulaIds: [
+      "two-dof-frequency-equation",
+      "mode-shape-ratio",
+    ],
+    problemTypes: [
+      "2DOF natural frequencies",
+    ],
+    tags: [
+      "Two DOF",
+      "Free vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
+  },
+  {
+    id: "two-dof-free-response",
+    title: "Two-DOF Free Response Superposition",
+    topic: "two-dof-systems",
+    subtopic: "Free response",
+    chapter: "Ch. 6",
+    latex: "x_1(t)=X_1^{(1)}\\cos(\\omega_1t+\\phi_1)+X_1^{(2)}\\cos(\\omega_2t+\\phi_2),\\quad x_2(t)=r_1X_1^{(1)}\\cos(\\omega_1t+\\phi_1)+r_2X_1^{(2)}\\cos(\\omega_2t+\\phi_2)",
+    explanation:
+      "Free response written as a superposition of the two normal modes.",
+    variables: [
+      { symbol: "X_1^{(1)},X_1^{(2)}", meaning: "Modal amplitudes referenced to coordinate 1", unit: "m" },
+      { symbol: "r_1,r_2", meaning: "Mode shape ratios", unit: "—" },
+      { symbol: "\\phi_1,\\phi_2", meaning: "Modal phase angles", unit: "rad" },
+    ],
+    assumptions: [
+      "Undamped 2DOF free vibration",
+      "Known modal frequencies and ratios",
+    ],
+    useCases: [
+      "Writing x₁(t), x₂(t) after modal solution",
+    ],
+    notFor: [
+      "Forced response without modal superposition",
+    ],
+    commonMistakes: [
+      "Mixing modal ratios between modes",
+    ],
+    relatedFormulaIds: [
+      "mode-shape-ratio",
+      "two-dof-modal-initial-condition-constants",
+    ],
+    problemTypes: [
+      "2DOF free response",
+    ],
+    tags: [
+      "Two DOF",
+      "Free vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
+  },
+  {
+    id: "two-dof-modal-initial-condition-constants",
+    title: "Two-DOF Modal Constants from Initial Conditions",
+    topic: "two-dof-systems",
+    subtopic: "Free response",
+    chapter: "Ch. 6",
+    latex: "X_1^{(1)}=\\frac{1}{r_2-r_1}\\left[(r_2x_1(0)-x_2(0))^2+\\frac{(-r_2\\dot{x}_1(0)+\\dot{x}_2(0))^2}{\\omega_1^2}\\right]^{1/2},\\quad X_1^{(2)}=\\frac{1}{r_2-r_1}\\left[(-r_1x_1(0)+x_2(0))^2+\\frac{(r_1\\dot{x}_1(0)-\\dot{x}_2(0))^2}{\\omega_2^2}\\right]^{1/2}",
+    explanation:
+      "Amplitude constants for the standard 2DOF modal free-response form from initial conditions.",
+    variables: [
+      { symbol: "X_1^{(1)},X_1^{(2)}", meaning: "Modal amplitudes", unit: "m" },
+      { symbol: "x_1(0),x_2(0)", meaning: "Initial displacements", unit: "m" },
+      { symbol: "\\dot{x}_1(0),\\dot{x}_2(0)", meaning: "Initial velocities", unit: "m/s" },
+    ],
+    assumptions: [
+      "Undamped 2DOF free vibration",
+      "Known mode shape ratios",
+    ],
+    useCases: [
+      "Applying initial conditions to modal response",
+    ],
+    notFor: [
+      "Damped coupled systems",
+    ],
+    commonMistakes: [
+      "Using these formulas when r₁ = r₂ or modes are not distinct",
+    ],
+    relatedFormulaIds: [
+      "two-dof-free-response",
+      "two-dof-modal-phase-constants",
+    ],
+    problemTypes: [
+      "2DOF initial-condition response",
+    ],
+    tags: [
+      "Two DOF",
+      "Free vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
+  },
+  {
+    id: "two-dof-modal-phase-constants",
+    title: "Two-DOF Modal Phase Constants",
+    topic: "two-dof-systems",
+    subtopic: "Free response",
+    chapter: "Ch. 6",
+    latex: "\\phi_1=\\tan^{-1}\\left[\\frac{-r_2\\dot{x}_1(0)+\\dot{x}_2(0)}{\\omega_1(r_2x_1(0)-x_2(0))}\\right],\\quad \\phi_2=\\tan^{-1}\\left[\\frac{r_1\\dot{x}_1(0)-\\dot{x}_2(0)}{\\omega_2(-r_1x_1(0)+x_2(0))}\\right]",
+    explanation:
+      "Phase constants for the standard 2DOF free-response modal expansion.",
+    variables: [
+      { symbol: "\\phi_1,\\phi_2", meaning: "Modal phase constants", unit: "rad" },
+    ],
+    assumptions: [
+      "Undamped 2DOF free vibration",
+      "Known modal ratios and initial conditions",
+    ],
+    useCases: [
+      "Completing the 2DOF free-response solution",
+    ],
+    notFor: [
+      "Damped coupled systems",
+    ],
+    commonMistakes: [
+      "Ignoring quadrant when using inverse tangent",
+    ],
+    relatedFormulaIds: [
+      "two-dof-modal-initial-condition-constants",
+      "two-dof-free-response",
+    ],
+    problemTypes: [
+      "2DOF initial-condition response",
+    ],
+    tags: [
+      "Two DOF",
+      "Free vibration",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
   },
   {
     id: "equivalent-mass-distributed-member-coefficients",
@@ -1304,6 +2562,182 @@ export const formulas: FormulaEntry[] = [
       "SDOF",
     ],
     source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+  },
+  {
+    id: "inertia-solid-disk",
+    title: "Mass Moment of Inertia: Solid Disk/Cylinder",
+    topic: "equivalent-systems",
+    subtopic: "Moments of inertia",
+    chapter: "Ch. 2",
+    latex: "I=\\frac{1}{2}mr^2",
+    explanation:
+      "Mass moment of inertia of a solid disk/cylinder about its centroidal symmetry axis.",
+    variables: [
+      { symbol: "I", meaning: "Mass moment of inertia", unit: "kg·m²" },
+      { symbol: "m", meaning: "Mass", unit: "kg" },
+      { symbol: "r", meaning: "Radius", unit: "m" },
+    ],
+    assumptions: [
+      "Uniform solid disk/cylinder",
+      "Axis through centroid along symmetry axis",
+    ],
+    useCases: [
+      "Rotational equivalent inertia calculations",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "parallel-axis-theorem",
+      "rotational-translational-equivalence",
+    ],
+    problemTypes: [
+      "Moment of inertia",
+    ],
+    tags: [
+      "Equivalent systems",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }],
+  },
+  {
+    id: "inertia-thin-ring",
+    title: "Mass Moment of Inertia: Thin Ring",
+    topic: "equivalent-systems",
+    subtopic: "Moments of inertia",
+    chapter: "Ch. 2",
+    latex: "I=mr^2",
+    explanation:
+      "Mass moment of inertia of a thin ring about its centroidal symmetry axis.",
+    variables: [
+      { symbol: "I", meaning: "Mass moment of inertia", unit: "kg·m²" },
+      { symbol: "m", meaning: "Mass", unit: "kg" },
+      { symbol: "r", meaning: "Radius", unit: "m" },
+    ],
+    assumptions: [
+      "Mass concentrated at radius r",
+    ],
+    useCases: [
+      "Rotational equivalent inertia calculations",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "parallel-axis-theorem",
+      "rotational-translational-equivalence",
+    ],
+    problemTypes: [
+      "Moment of inertia",
+    ],
+    tags: [
+      "Equivalent systems",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }],
+  },
+  {
+    id: "inertia-solid-sphere",
+    title: "Mass Moment of Inertia: Solid Sphere",
+    topic: "equivalent-systems",
+    subtopic: "Moments of inertia",
+    chapter: "Ch. 2",
+    latex: "I=\\frac{2}{5}mr^2",
+    explanation:
+      "Mass moment of inertia of a uniform solid sphere about a centroidal diameter.",
+    variables: [
+      { symbol: "I", meaning: "Mass moment of inertia", unit: "kg·m²" },
+      { symbol: "m", meaning: "Mass", unit: "kg" },
+      { symbol: "r", meaning: "Radius", unit: "m" },
+    ],
+    assumptions: [
+      "Uniform solid sphere",
+      "Axis through center",
+    ],
+    useCases: [
+      "Rotational equivalent inertia calculations",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "parallel-axis-theorem",
+    ],
+    problemTypes: [
+      "Moment of inertia",
+    ],
+    tags: [
+      "Equivalent systems",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }],
+  },
+  {
+    id: "inertia-slender-rod-end",
+    title: "Mass Moment of Inertia: Slender Rod About End",
+    topic: "equivalent-systems",
+    subtopic: "Moments of inertia",
+    chapter: "Ch. 2",
+    latex: "I=\\frac{1}{3}mr^2",
+    explanation:
+      "Mass moment of inertia of a slender rod about one end; r represents rod length in the course-sheet notation.",
+    variables: [
+      { symbol: "I", meaning: "Mass moment of inertia", unit: "kg·m²" },
+      { symbol: "m", meaning: "Mass", unit: "kg" },
+      { symbol: "r", meaning: "Rod length in sheet notation", unit: "m" },
+    ],
+    assumptions: [
+      "Uniform slender rod",
+      "Axis through one end perpendicular to rod",
+    ],
+    useCases: [
+      "Pendulum and rotational SDOF models",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "parallel-axis-theorem",
+    ],
+    problemTypes: [
+      "Moment of inertia",
+    ],
+    tags: [
+      "Equivalent systems",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }],
+  },
+  {
+    id: "inertia-rectangular-plate",
+    title: "Mass Moment of Inertia: Rectangular Plate/Form",
+    topic: "equivalent-systems",
+    subtopic: "Moments of inertia",
+    chapter: "Ch. 2",
+    latex: "I=\\frac{1}{12}m(r_1^2+r_2^2)",
+    explanation:
+      "Course-sheet rectangular/plate inertia form involving two geometric dimensions r₁ and r₂.",
+    variables: [
+      { symbol: "r_1,r_2", meaning: "Geometry dimensions", unit: "m" },
+      { symbol: "m", meaning: "Mass", unit: "kg" },
+    ],
+    assumptions: [
+      "Uniform body with matching geometry from sheet",
+    ],
+    useCases: [
+      "Equivalent rotational inertia",
+    ],
+    notFor: [],
+    commonMistakes: [
+      "Confirm which dimensions correspond to r₁ and r₂ in the course diagram",
+    ],
+    relatedFormulaIds: [
+      "parallel-axis-theorem",
+    ],
+    problemTypes: [
+      "Moment of inertia",
+    ],
+    tags: [
+      "Equivalent systems",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }],
   },
   {
     id: "axial-member-stiffness",

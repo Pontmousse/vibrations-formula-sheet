@@ -18,6 +18,8 @@ export const courseTopics: CourseTopic[] = [
       "Degrees of freedom",
       "Equations of motion",
       "ODE solution patterns",
+      "Trigonometric identities",
+      "Integration identities",
       "Euler's formula",
       "Parallel axis theorem",
     ],
@@ -62,6 +64,7 @@ export const courseTopics: CourseTopic[] = [
     subtopics: [
       "Undamped harmonic forcing",
       "Viscously damped harmonic forcing",
+      "Harmonic total response",
       "Magnification factor",
       "Phase angle",
       "Resonance",
@@ -147,6 +150,7 @@ export const courseTopics: CourseTopic[] = [
       "Combining masses, springs, dampers, and beam stiffness equivalents.",
     subtopics: [
       "Equivalent masses",
+      "Moments of inertia",
       "Equivalent springs",
       "Equivalent viscous dampers",
       "Beam stiffness equivalents",
