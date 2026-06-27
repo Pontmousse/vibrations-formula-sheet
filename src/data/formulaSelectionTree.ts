@@ -46,9 +46,12 @@ export const selectionResults: Record<string, SelectionResult> = {
       "inertia-solid-disk",
       "inertia-thin-ring",
       "inertia-solid-sphere",
+      "inertia-thin-spherical-shell",
       "inertia-slender-rod-end",
+      "inertia-slender-rod-centroid",
       "inertia-rectangular-plate",
       "parallel-axis-theorem",
+      "parallel-axis-theorem-inertia-form",
       "natural-frequency",
     ],
     warnings: [

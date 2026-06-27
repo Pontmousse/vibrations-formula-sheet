@@ -57,7 +57,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["underdamped-free-response", "undamped-forced-response"],
     problemTypes: ["Complex exponential form of harmonic motion"],
     tags: ["Conceptual", "SDOF"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
     example: {
       prompt: "Express cos(ωt) using complex exponentials.",
       steps: [
@@ -109,7 +109,7 @@ export const formulas: FormulaEntry[] = [
       "Conceptual",
       "Equivalent systems",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "sdof-free-eom",
@@ -156,7 +156,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "sdof-characteristic-equation",
@@ -198,7 +198,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "sdof-characteristic-roots",
@@ -240,7 +240,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "discriminant-solution-patterns",
@@ -280,7 +280,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "trigonometric-sum-identities",
@@ -448,7 +448,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["damped-natural-frequency", "springs-parallel", "springs-series"],
     problemTypes: ["SDOF parameter identification", "Equivalent system setup"],
     tags: ["SDOF", "Free vibration", "Conceptual"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 1 }],
     example: {
       prompt: "A 5 kg mass on a 200 N/m spring. Find ω_n.",
       steps: ["ω_n = √(k/m) = √(200/5) = √40 ≈ 6.32 rad/s"],
@@ -494,7 +494,7 @@ export const formulas: FormulaEntry[] = [
       "SDOF",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "damping-ratio",
@@ -541,7 +541,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "damped-natural-frequency",
@@ -570,7 +570,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["underdamped-free-response", "damping-ratio"],
     problemTypes: ["Underdamped free vibration"],
     tags: ["SDOF", "Damping", "Free vibration"],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "log-decrement",
@@ -615,7 +615,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Free vibration",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "undamped-free-response",
@@ -662,7 +662,7 @@ export const formulas: FormulaEntry[] = [
       "SDOF",
       "Free vibration",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "underdamped-free-response",
@@ -708,7 +708,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "underdamped-initial-condition-constants",
@@ -752,7 +752,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 1 }],
   },
   {
     id: "critically-damped-response",
@@ -793,7 +793,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
   },
   {
     id: "overdamped-response",
@@ -836,7 +836,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
   },
   {
     id: "overdamped-initial-condition-constants",
@@ -876,7 +876,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
   },
   {
     id: "undamped-forced-response",
@@ -920,7 +920,7 @@ export const formulas: FormulaEntry[] = [
       "SDOF",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
   },
   {
     id: "magnification-factor-undamped",
@@ -963,7 +963,7 @@ export const formulas: FormulaEntry[] = [
       "SDOF",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
   },
   {
     id: "damped-forced-amplitude",
@@ -1010,7 +1010,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }],
   },
   {
     id: "magnification-factor",
@@ -1033,7 +1033,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["damped-forced-amplitude", "transmissibility-absolute"],
     problemTypes: ["Forced vibration design"],
     tags: ["SDOF", "Forced vibration", "Damping"],
-    source: [{ sheet: "Midterm formula sheet", page: 3 }],
+    source: [{ sheet: "Midterm formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }],
   },
   {
     id: "phase-angle",
@@ -1077,7 +1077,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }],
   },
   {
     id: "damped-harmonic-total-response",
@@ -1120,7 +1120,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
   },
   {
     id: "damped-harmonic-transient-constants",
@@ -1162,7 +1162,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }],
   },
   {
     id: "transmissibility-absolute",
@@ -1188,7 +1188,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["transmissibility-relative", "magnification-factor"],
     problemTypes: ["Base excitation", "Isolation design"],
     tags: ["SDOF", "Base excitation", "Forced vibration"],
-    source: [{ sheet: "Midterm formula sheet", page: 4 }],
+    source: [{ sheet: "Midterm formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }],
   },
   {
     id: "transmissibility-relative",
@@ -1210,7 +1210,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["transmissibility-absolute"],
     problemTypes: ["Relative motion in base excitation"],
     tags: ["SDOF", "Base excitation", "Forced vibration"],
-    source: [{ sheet: "Midterm formula sheet", page: 4 }],
+    source: [{ sheet: "Midterm formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }],
   },
   {
     id: "base-excitation-eom",
@@ -1252,7 +1252,7 @@ export const formulas: FormulaEntry[] = [
       "Base excitation",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }],
   },
   {
     id: "base-excitation-phase",
@@ -1293,7 +1293,7 @@ export const formulas: FormulaEntry[] = [
       "Base excitation",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }],
   },
   {
     id: "relative-motion-eom",
@@ -1333,7 +1333,7 @@ export const formulas: FormulaEntry[] = [
       "Base excitation",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }],
   },
   {
     id: "relative-motion-phase",
@@ -1374,7 +1374,7 @@ export const formulas: FormulaEntry[] = [
       "Base excitation",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }],
   },
   {
     id: "coulomb-equivalent-damping",
@@ -1420,7 +1420,51 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
+  },
+  {
+    id: "coulomb-eom-equivalent-damping-sheet-form",
+    title: "Coulomb Damping EOM Approximation (Midterm Sheet Form)",
+    topic: "nonviscous-coulomb-damping",
+    subtopic: "Equivalent viscous damping",
+    chapter: "Ch. 3",
+    latex: "m\\ddot{x}+kx\\pm\\mu N\\cong m\\ddot{x}+kx+c_{eq}\\dot{x},\\quad c_{eq}=\\frac{4\\mu N}{\\pi\\omega}",
+    explanation:
+      "Midterm-sheet EOM approximation for representing Coulomb friction with an equivalent viscous term. The sheet also lists the amplitude-dependent energy-equivalent coefficient separately.",
+    variables: [
+      { symbol: "c_{eq}", meaning: "Equivalent damping term in the sheet approximation", unit: "see note" },
+      { symbol: "\\mu N", meaning: "Coulomb friction force magnitude", unit: "N" },
+      { symbol: "\\omega", meaning: "Motion/forcing frequency", unit: "rad/s" },
+    ],
+    assumptions: [
+      "Coulomb friction",
+      "Harmonic motion approximation",
+      "Use with the notation/normalization of the Midterm sheet derivation",
+    ],
+    useCases: [
+      "Recognizing the EOM approximation used before the Coulomb forced-response amplitude formula",
+    ],
+    notFor: [
+      "Generic viscous damping coefficient calculations where units must be N·s/m without additional normalization",
+    ],
+    commonMistakes: [
+      "Using this sheet form interchangeably with the amplitude-dependent energy-equivalent coefficient without checking notation",
+    ],
+    relatedFormulaIds: [
+      "coulomb-equivalent-damping",
+      "coulomb-harmonic-amplitude",
+      "coulomb-harmonic-phase",
+    ],
+    problemTypes: [
+      "Dry friction damping",
+      "Equivalent viscous damping",
+    ],
+    tags: [
+      "SDOF",
+      "Damping",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Midterm formula sheet", page: 3 }],
   },
   {
     id: "coulomb-harmonic-amplitude",
@@ -1462,7 +1506,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }],
   },
   {
     id: "coulomb-harmonic-phase",
@@ -1503,7 +1547,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }],
   },
   {
     id: "fourier-series",
@@ -2479,7 +2523,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
   },
   {
     id: "rotational-translational-equivalence",
@@ -2521,7 +2565,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
   },
   {
     id: "lever-equivalent-masses",
@@ -2561,7 +2605,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
   },
   {
     id: "inertia-solid-disk",
@@ -2597,7 +2641,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }],
   },
   {
     id: "inertia-thin-ring",
@@ -2632,7 +2676,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }],
   },
   {
     id: "inertia-solid-sphere",
@@ -2667,7 +2711,43 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }],
+  },
+  {
+    id: "inertia-thin-spherical-shell",
+    title: "Mass Moment of Inertia: Thin Spherical Shell",
+    topic: "equivalent-systems",
+    subtopic: "Moments of inertia",
+    chapter: "Ch. 2",
+    latex: "I=\\frac{2}{3}mr^2",
+    explanation:
+      "Course-sheet moment of inertia form commonly used for a thin spherical shell about a centroidal diameter.",
+    variables: [
+      { symbol: "I", meaning: "Mass moment of inertia", unit: "kg·m²" },
+      { symbol: "m", meaning: "Mass", unit: "kg" },
+      { symbol: "r", meaning: "Radius", unit: "m" },
+    ],
+    assumptions: [
+      "Uniform thin spherical shell",
+      "Axis through center",
+    ],
+    useCases: [
+      "Rotational equivalent inertia calculations",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "parallel-axis-theorem",
+      "rotational-translational-equivalence",
+    ],
+    problemTypes: [
+      "Moment of inertia",
+    ],
+    tags: [
+      "Equivalent systems",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Midterm formula sheet", page: 6 }],
   },
   {
     id: "inertia-slender-rod-end",
@@ -2702,7 +2782,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }],
   },
   {
     id: "inertia-rectangular-plate",
@@ -2737,7 +2817,87 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }],
+  },
+  {
+    id: "inertia-slender-rod-centroid",
+    title: "Mass Moment of Inertia: Slender Rod About Centroid",
+    topic: "equivalent-systems",
+    subtopic: "Moments of inertia",
+    chapter: "Ch. 2",
+    latex: "I=\\frac{1}{12}mr^2",
+    explanation:
+      "Course-sheet moment of inertia form for a slender rod about its centroidal transverse axis; r denotes the rod length in the sheet notation.",
+    variables: [
+      { symbol: "I", meaning: "Mass moment of inertia", unit: "kg·m²" },
+      { symbol: "m", meaning: "Mass", unit: "kg" },
+      { symbol: "r", meaning: "Rod length in sheet notation", unit: "m" },
+    ],
+    assumptions: [
+      "Uniform slender rod",
+      "Axis through centroid and perpendicular to rod",
+    ],
+    useCases: [
+      "Rotational equivalent inertia calculations",
+      "Using parallel axis theorem to shift to an endpoint",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "parallel-axis-theorem",
+      "inertia-slender-rod-end",
+    ],
+    problemTypes: [
+      "Moment of inertia",
+    ],
+    tags: [
+      "Equivalent systems",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Midterm formula sheet", page: 6 }],
+  },
+  {
+    id: "parallel-axis-theorem-inertia-form",
+    title: "Parallel Axis Theorem (Inertia Form)",
+    topic: "foundations-modeling",
+    subtopic: "Parallel axis theorem",
+    chapter: "Ch. 2",
+    latex: "I_O=I_C+md^2",
+    explanation:
+      "Midterm-sheet inertia form of the parallel axis theorem for shifting a mass moment of inertia from centroid C to a parallel axis through O.",
+    variables: [
+      { symbol: "I_O", meaning: "Moment of inertia about shifted axis O", unit: "kg·m²" },
+      { symbol: "I_C", meaning: "Moment of inertia about centroidal parallel axis C", unit: "kg·m²" },
+      { symbol: "m", meaning: "Mass", unit: "kg" },
+      { symbol: "d", meaning: "Distance between parallel axes", unit: "m" },
+    ],
+    assumptions: [
+      "Rigid body",
+      "Axes are parallel",
+    ],
+    useCases: [
+      "Shifting known centroidal inertia to a pivot or support axis",
+    ],
+    notFor: [
+      "Non-parallel axes",
+    ],
+    commonMistakes: [
+      "Using distance to the wrong axis",
+    ],
+    relatedFormulaIds: [
+      "parallel-axis-theorem",
+      "inertia-slender-rod-centroid",
+      "inertia-slender-rod-end",
+    ],
+    problemTypes: [
+      "Equivalent inertia",
+      "Rigid-body vibration modeling",
+    ],
+    tags: [
+      "Equivalent systems",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Midterm formula sheet", page: 6 }],
   },
   {
     id: "axial-member-stiffness",
@@ -2776,7 +2936,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
   },
   {
     id: "sheet-circular-section-axial-stiffness",
@@ -2814,7 +2974,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
   },
   {
     id: "helical-spring-stiffness",
@@ -2854,7 +3014,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
   },
   {
     id: "beam-stiffness-fixed-guided",
@@ -2894,7 +3054,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
   },
   {
     id: "hollow-shaft-torsional-stiffness",
@@ -2934,7 +3094,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
   },
   {
     id: "viscous-shear-damper",
@@ -2975,7 +3135,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
   },
   {
     id: "viscous-damper-annular-geometry",
@@ -3015,7 +3175,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
   },
   {
     id: "viscous-damper-composite-film",
@@ -3055,7 +3215,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
   },
   {
     id: "springs-series",
@@ -3077,7 +3237,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["springs-parallel", "natural-frequency"],
     problemTypes: ["Equivalent stiffness"],
     tags: ["Equivalent systems", "SDOF"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 5 }],
   },
   {
     id: "springs-parallel",
@@ -3099,7 +3259,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["springs-series", "natural-frequency"],
     problemTypes: ["Equivalent stiffness"],
     tags: ["Equivalent systems", "SDOF"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 5 }],
   },
   {
     id: "beam-stiffness-cantilever",
@@ -3123,7 +3283,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["beam-stiffness-simply-supported", "natural-frequency"],
     problemTypes: ["Beam equivalent stiffness"],
     tags: ["Equivalent systems", "SDOF"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
   },
   {
     id: "beam-stiffness-simply-supported",
@@ -3147,7 +3307,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["beam-stiffness-cantilever", "natural-frequency"],
     problemTypes: ["Beam equivalent stiffness"],
     tags: ["Equivalent systems", "SDOF"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
   },
 ];
 
