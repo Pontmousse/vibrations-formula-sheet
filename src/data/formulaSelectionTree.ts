@@ -192,6 +192,30 @@ export const selectionResults: Record<string, SelectionResult> = {
       "Pick the impulse response that matches the damping level of the system.",
     ],
   },
+
+  "result-multi-dof-modal": {
+    title: "Multi-DOF / modal analysis",
+    description:
+      "Use matrix formulation, eigenvalues, modal expansion, and approximate methods for n-DOF systems.",
+    topicId: "multi-dof-continuous",
+    formulaIds: [
+      "lagrange-equations-mdof",
+      "mdof-energy-matrix-forms",
+      "eigenvalue-problem-mdof",
+      "modal-expansion-theorem",
+      "modal-transform",
+      "undamped-modal-response",
+      "proportional-damping-rayleigh",
+      "damped-modal-response",
+      "influence-coefficients",
+      "dunkerley-frequency-estimate",
+      "rayleigh-quotient",
+      "shaft-critical-speed",
+    ],
+    warnings: [
+      "Modal formulas assume a linear system and usually require consistent mass/stiffness matrices and mode-shape normalization.",
+    ],
+  },
 };
 
 export const selectionNodes: Record<string, SelectionNode> = {
@@ -223,6 +247,12 @@ export const selectionNodes: Record<string, SelectionNode> = {
         label: "Two DOF",
         hint: "Coupled coordinates, mode shapes",
         result: selectionResults["result-two-dof"],
+      },
+      {
+        id: "dof-mdof",
+        label: "Multi-DOF / modal analysis",
+        hint: "Matrix formulation, eigenvalues, modal coordinates",
+        result: selectionResults["result-multi-dof-modal"],
       },
       {
         id: "dof-sdof",

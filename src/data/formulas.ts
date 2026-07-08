@@ -57,7 +57,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["underdamped-free-response", "undamped-forced-response"],
     problemTypes: ["Complex exponential form of harmonic motion"],
     tags: ["Conceptual", "SDOF"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
     example: {
       prompt: "Express cos(ωt) using complex exponentials.",
       steps: [
@@ -109,7 +109,7 @@ export const formulas: FormulaEntry[] = [
       "Conceptual",
       "Equivalent systems",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "sdof-free-eom",
@@ -156,7 +156,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "sdof-characteristic-equation",
@@ -198,7 +198,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "sdof-characteristic-roots",
@@ -240,7 +240,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "discriminant-solution-patterns",
@@ -280,7 +280,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "trigonometric-sum-identities",
@@ -314,7 +314,7 @@ export const formulas: FormulaEntry[] = [
       "Conceptual",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "integration-identities-harmonic-response",
@@ -347,7 +347,7 @@ export const formulas: FormulaEntry[] = [
       "Conceptual",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "exponential-harmonic-integration-identities",
@@ -383,7 +383,7 @@ export const formulas: FormulaEntry[] = [
       "Impulse",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "integration-by-parts",
@@ -412,7 +412,7 @@ export const formulas: FormulaEntry[] = [
     tags: [
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "natural-frequency",
@@ -448,7 +448,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["damped-natural-frequency", "springs-parallel", "springs-series"],
     problemTypes: ["SDOF parameter identification", "Equivalent system setup"],
     tags: ["SDOF", "Free vibration", "Conceptual"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
     example: {
       prompt: "A 5 kg mass on a 200 N/m spring. Find ω_n.",
       steps: ["ω_n = √(k/m) = √(200/5) = √40 ≈ 6.32 rad/s"],
@@ -494,7 +494,7 @@ export const formulas: FormulaEntry[] = [
       "SDOF",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "damping-ratio",
@@ -541,7 +541,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "damped-natural-frequency",
@@ -570,7 +570,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["underdamped-free-response", "damping-ratio"],
     problemTypes: ["Underdamped free vibration"],
     tags: ["SDOF", "Damping", "Free vibration"],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "log-decrement",
@@ -615,7 +615,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Free vibration",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "undamped-free-response",
@@ -662,7 +662,7 @@ export const formulas: FormulaEntry[] = [
       "SDOF",
       "Free vibration",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "underdamped-free-response",
@@ -708,7 +708,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 1 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "underdamped-initial-condition-constants",
@@ -752,7 +752,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 1 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 1 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "critically-damped-response",
@@ -793,7 +793,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "overdamped-response",
@@ -836,7 +836,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "overdamped-initial-condition-constants",
@@ -876,7 +876,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "undamped-forced-response",
@@ -920,7 +920,7 @@ export const formulas: FormulaEntry[] = [
       "SDOF",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "magnification-factor-undamped",
@@ -963,7 +963,7 @@ export const formulas: FormulaEntry[] = [
       "SDOF",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "damped-forced-amplitude",
@@ -1010,7 +1010,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "magnification-factor",
@@ -1033,7 +1033,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["damped-forced-amplitude", "transmissibility-absolute"],
     problemTypes: ["Forced vibration design"],
     tags: ["SDOF", "Forced vibration", "Damping"],
-    source: [{ sheet: "Midterm formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }],
+    source: [{ sheet: "Midterm formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "phase-angle",
@@ -1077,7 +1077,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "damped-harmonic-total-response",
@@ -1120,7 +1120,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 2 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "damped-harmonic-transient-constants",
@@ -1162,7 +1162,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 2 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "transmissibility-absolute",
@@ -1188,7 +1188,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["transmissibility-relative", "magnification-factor"],
     problemTypes: ["Base excitation", "Isolation design"],
     tags: ["SDOF", "Base excitation", "Forced vibration"],
-    source: [{ sheet: "Midterm formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }],
+    source: [{ sheet: "Midterm formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "transmissibility-relative",
@@ -1210,7 +1210,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["transmissibility-absolute"],
     problemTypes: ["Relative motion in base excitation"],
     tags: ["SDOF", "Base excitation", "Forced vibration"],
-    source: [{ sheet: "Midterm formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }],
+    source: [{ sheet: "Midterm formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "base-excitation-eom",
@@ -1252,7 +1252,7 @@ export const formulas: FormulaEntry[] = [
       "Base excitation",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "base-excitation-phase",
@@ -1293,7 +1293,7 @@ export const formulas: FormulaEntry[] = [
       "Base excitation",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "relative-motion-eom",
@@ -1333,7 +1333,7 @@ export const formulas: FormulaEntry[] = [
       "Base excitation",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "relative-motion-phase",
@@ -1374,7 +1374,7 @@ export const formulas: FormulaEntry[] = [
       "Base excitation",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 3 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "coulomb-equivalent-damping",
@@ -1420,7 +1420,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "coulomb-eom-equivalent-damping-sheet-form",
@@ -1464,7 +1464,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Forced vibration",
     ],
-    source: [{ sheet: "Midterm formula sheet", page: 3 }],
+    source: [{ sheet: "Midterm formula sheet", page: 3 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "coulomb-harmonic-amplitude",
@@ -1506,7 +1506,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "coulomb-harmonic-phase",
@@ -1547,7 +1547,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }, { sheet: "Midterm formula sheet", page: 3 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "fourier-series",
@@ -1589,7 +1589,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "fourier-coefficients",
@@ -1629,7 +1629,7 @@ export const formulas: FormulaEntry[] = [
       "Fourier",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "discrete-fourier-coefficients",
@@ -1671,7 +1671,7 @@ export const formulas: FormulaEntry[] = [
       "Fourier",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "first-order-fourier-response",
@@ -1712,7 +1712,7 @@ export const formulas: FormulaEntry[] = [
       "Fourier",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "first-order-fourier-definitions",
@@ -1751,7 +1751,7 @@ export const formulas: FormulaEntry[] = [
       "Fourier",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "second-order-fourier-response",
@@ -1795,7 +1795,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "second-order-fourier-phase",
@@ -1835,7 +1835,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "impulse-response-undamped",
@@ -1878,7 +1878,7 @@ export const formulas: FormulaEntry[] = [
       "Impulse",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "impulse-response-underdamped",
@@ -1920,7 +1920,7 @@ export const formulas: FormulaEntry[] = [
       "Impulse",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "duhamel-integral",
@@ -1964,7 +1964,7 @@ export const formulas: FormulaEntry[] = [
       "Impulse",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "step-response",
@@ -2009,7 +2009,7 @@ export const formulas: FormulaEntry[] = [
       "Forced vibration",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "impulse-momentum-definition",
@@ -2044,7 +2044,7 @@ export const formulas: FormulaEntry[] = [
       "Impulse",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "delta-function-properties",
@@ -2081,7 +2081,7 @@ export const formulas: FormulaEntry[] = [
       "Impulse",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "undamped-step-response",
@@ -2124,7 +2124,7 @@ export const formulas: FormulaEntry[] = [
       "Impulse",
       "Forced vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "base-excitation-duhamel-relative-response",
@@ -2167,7 +2167,7 @@ export const formulas: FormulaEntry[] = [
       "Impulse",
       "Damping",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "two-dof-matrix-eom",
@@ -2210,7 +2210,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "two-dof-frequency-equation",
@@ -2250,7 +2250,7 @@ export const formulas: FormulaEntry[] = [
       "Two DOF",
       "Free vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "mode-shape-ratio",
@@ -2291,7 +2291,7 @@ export const formulas: FormulaEntry[] = [
       "Free vibration",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "two-dof-scalar-eom",
@@ -2329,7 +2329,7 @@ export const formulas: FormulaEntry[] = [
       "Two DOF",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "two-dof-natural-frequency-roots",
@@ -2406,7 +2406,7 @@ export const formulas: FormulaEntry[] = [
       "Two DOF",
       "Free vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "two-dof-modal-initial-condition-constants",
@@ -2446,7 +2446,7 @@ export const formulas: FormulaEntry[] = [
       "Two DOF",
       "Free vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "two-dof-modal-phase-constants",
@@ -2484,7 +2484,738 @@ export const formulas: FormulaEntry[] = [
       "Two DOF",
       "Free vibration",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 7 }, { sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "lagrange-equations-mdof",
+    title: "Lagrange Equations for Multi-DOF Systems",
+    topic: "multi-dof-continuous",
+    subtopic: "Lagrange equations",
+    chapter: "Ch. 7-8",
+    latex: "\\frac{d}{dt}\\left(\\frac{\\partial T}{\\partial \\dot{x}_i}\\right)-\\frac{\\partial T}{\\partial x_i}+\\frac{\\partial R}{\\partial \\dot{x}_i}+\\frac{\\partial V}{\\partial x_i}=F_i^{(n)},\\quad i=1,2,\\ldots,n",
+    explanation:
+      "Generalized Lagrange equation with kinetic energy T, potential energy V, dissipation function R, and nonconservative generalized force.",
+    variables: [
+      { symbol: "T", meaning: "Kinetic energy", unit: "J" },
+      { symbol: "V", meaning: "Potential energy", unit: "J" },
+      { symbol: "R", meaning: "Rayleigh dissipation function", unit: "W" },
+      { symbol: "F_i^{(n)}", meaning: "Nonconservative generalized force", unit: "N or N·m" },
+    ],
+    assumptions: [
+      "Generalized coordinates are independent",
+      "Small vibration linearization may follow after deriving equations",
+    ],
+    useCases: [
+      "Deriving multi-DOF equations of motion from energy expressions",
+    ],
+    notFor: [
+      "Direct plug-and-chug response formulas",
+    ],
+    commonMistakes: [
+      "Sign errors in the potential-energy term",
+    ],
+    relatedFormulaIds: [
+      "mdof-energy-matrix-forms",
+      "generalized-force-coordinate",
+    ],
+    problemTypes: [
+      "Lagrange equations",
+      "MDOF modeling",
+    ],
+    tags: [
+      "Conceptual",
+      "Two DOF",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "mdof-energy-matrix-forms",
+    title: "Matrix Energy Forms",
+    topic: "multi-dof-continuous",
+    subtopic: "Matrix formulation",
+    chapter: "Ch. 7-8",
+    latex: "T=\\frac{1}{2}\\dot{\\vec{x}}^T[m]\\dot{\\vec{x}},\\quad V=\\frac{1}{2}\\vec{x}^T[k]\\vec{x}",
+    explanation:
+      "Quadratic kinetic and potential energy expressions for linear multi-DOF systems.",
+    variables: [
+      { symbol: "[m]", meaning: "Mass matrix", unit: "kg" },
+      { symbol: "[k]", meaning: "Stiffness matrix", unit: "N/m" },
+      { symbol: "\\vec{x}", meaning: "Displacement vector", unit: "m" },
+    ],
+    assumptions: [
+      "Linearized system",
+      "Symmetric mass and stiffness matrices",
+    ],
+    useCases: [
+      "Constructing equations of motion from energy",
+      "Checking matrix assembly",
+    ],
+    notFor: [
+      "Nonlinear large-motion energy forms",
+    ],
+    commonMistakes: [
+      "Using non-symmetric matrices for conservative systems without justification",
+    ],
+    relatedFormulaIds: [
+      "lagrange-equations-mdof",
+      "eigenvalue-problem-mdof",
+    ],
+    problemTypes: [
+      "Matrix formulation",
+      "Energy method",
+    ],
+    tags: [
+      "Conceptual",
+      "Two DOF",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "proportional-damping-rayleigh",
+    title: "Proportional / Rayleigh Damping",
+    topic: "multi-dof-continuous",
+    subtopic: "Modal analysis",
+    chapter: "Ch. 7-8",
+    latex: "[c]=\\alpha[m]+\\beta[k],\\quad \\alpha+\\omega_i^2\\beta=2\\zeta_i\\omega_i",
+    explanation:
+      "Rayleigh proportional damping model, which allows modal decoupling of damped multi-DOF equations.",
+    variables: [
+      { symbol: "[c]", meaning: "Damping matrix", unit: "N·s/m" },
+      { symbol: "\\alpha,\\beta", meaning: "Mass- and stiffness-proportional damping constants", unit: "various" },
+      { symbol: "\\zeta_i", meaning: "Modal damping ratio", unit: "—" },
+    ],
+    assumptions: [
+      "Classical/proportional damping assumption",
+      "Known target modal damping ratios if solving for α and β",
+    ],
+    useCases: [
+      "Building a damping matrix compatible with modal analysis",
+    ],
+    notFor: [
+      "Non-proportional damping without complex modal analysis",
+    ],
+    commonMistakes: [
+      "Assuming all damping matrices are proportional",
+    ],
+    relatedFormulaIds: [
+      "modal-damped-equations-proportional",
+      "damped-modal-response",
+    ],
+    problemTypes: [
+      "Modal damping",
+      "Rayleigh damping",
+    ],
+    tags: [
+      "Damping",
+      "Two DOF",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "modal-damped-equations-proportional",
+    title: "Decoupled Modal Equations with Proportional Damping",
+    topic: "multi-dof-continuous",
+    subtopic: "Modal analysis",
+    chapter: "Ch. 7-8",
+    latex: "[I]\\ddot{\\vec{q}}(t)+\\left[\\alpha[I]+\\beta[\\omega^2]\\right]\\dot{\\vec{q}}(t)+[\\omega^2]\\vec{q}(t)=\\vec{Q}(t)",
+    explanation:
+      "Modal-coordinate equation set for a proportionally damped multi-DOF system.",
+    variables: [
+      { symbol: "[I]", meaning: "Identity matrix", unit: "—" },
+      { symbol: "[\\omega^2]", meaning: "Diagonal matrix of modal frequency squares", unit: "rad²/s²" },
+      { symbol: "\\vec{q}", meaning: "Modal coordinates", unit: "varies" },
+      { symbol: "\\vec{Q}", meaning: "Modal generalized forces", unit: "varies" },
+    ],
+    assumptions: [
+      "Modal coordinates are mass-normalized",
+      "Proportional damping",
+    ],
+    useCases: [
+      "Solving damped MDOF response mode by mode",
+    ],
+    notFor: [
+      "Nonclassical damping",
+    ],
+    commonMistakes: [
+      "Forgetting modal normalization assumptions",
+    ],
+    relatedFormulaIds: [
+      "proportional-damping-rayleigh",
+      "damped-modal-response",
+    ],
+    problemTypes: [
+      "Modal analysis",
+      "Damped MDOF response",
+    ],
+    tags: [
+      "Damping",
+      "Two DOF",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "generalized-force-coordinate",
+    title: "Generalized Nonconservative Force",
+    topic: "multi-dof-continuous",
+    subtopic: "Lagrange equations",
+    chapter: "Ch. 7-8",
+    latex: "\\vec{F}=F_{xk}\\vec{i}+F_{yk}\\vec{j}+F_{zk}\\vec{k},\\quad Q_j^{(n)}=\\sum_k\\left(F_{xk}\\frac{\\partial x_k}{\\partial q_j}+F_{yk}\\frac{\\partial y_k}{\\partial q_j}+F_{zk}\\frac{\\partial z_k}{\\partial q_j}\\right)",
+    explanation:
+      "Maps physical external forces into generalized forces for use in Lagrange equations.",
+    variables: [
+      { symbol: "Q_j^{(n)}", meaning: "Nonconservative generalized force", unit: "varies" },
+      { symbol: "q_j", meaning: "Generalized coordinate", unit: "varies" },
+      { symbol: "F_{xk},F_{yk},F_{zk}", meaning: "Cartesian force components on point k", unit: "N" },
+    ],
+    assumptions: [
+      "Virtual work relation between Cartesian and generalized coordinates",
+    ],
+    useCases: [
+      "Finding generalized forcing terms in energy methods",
+    ],
+    notFor: [
+      "Forces that are already directly generalized",
+    ],
+    commonMistakes: [
+      "Omitting a coordinate dependency in the partial derivative",
+    ],
+    relatedFormulaIds: [
+      "lagrange-equations-mdof",
+    ],
+    problemTypes: [
+      "Generalized forces",
+    ],
+    tags: [
+      "Conceptual",
+      "Two DOF",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "eigenvalue-problem-mdof",
+    title: "Multi-DOF Eigenvalue Problem",
+    topic: "multi-dof-continuous",
+    subtopic: "Eigenvalue problem",
+    chapter: "Ch. 7-8",
+    latex: "\\left([k]-\\omega^2[m]\\right)\\vec{X}=0,\\quad [\\lambda[I]-[D]]\\vec{X}=\\vec{0},\\quad [D]=[k]^{-1}[m]",
+    explanation:
+      "Eigenvalue formulations for undamped multi-DOF natural frequencies and mode shapes.",
+    variables: [
+      { symbol: "[m]", meaning: "Mass matrix", unit: "kg" },
+      { symbol: "[k]", meaning: "Stiffness matrix", unit: "N/m" },
+      { symbol: "\\vec{X}", meaning: "Mode shape vector", unit: "varies" },
+      { symbol: "\\lambda", meaning: "Eigenvalue in transformed problem", unit: "varies" },
+    ],
+    assumptions: [
+      "Undamped free vibration",
+      "Linear system matrices",
+    ],
+    useCases: [
+      "Finding natural frequencies and mode shapes",
+    ],
+    notFor: [
+      "Damped forced response without modal framework",
+    ],
+    commonMistakes: [
+      "Using singular stiffness matrix without checking constraints",
+    ],
+    relatedFormulaIds: [
+      "modal-expansion-theorem",
+      "rayleigh-quotient",
+    ],
+    problemTypes: [
+      "Eigenvalue problem",
+      "Modal analysis",
+    ],
+    tags: [
+      "Two DOF",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "modal-expansion-theorem",
+    title: "Modal Expansion Theorem",
+    topic: "multi-dof-continuous",
+    subtopic: "Expansion theorem",
+    chapter: "Ch. 7-8",
+    latex: "\\vec{x}(t)=\\sum_{i=1}^{n}c_i\\vec{X}^{(i)},\\quad c_i=\\frac{\\vec{X}^{(i)T}[m]\\vec{x}(t)}{\\vec{X}^{(i)T}[m]\\vec{X}^{(i)}}=\\frac{\\vec{X}^{(i)T}[m]\\vec{x}(t)}{M_{ii}}",
+    explanation:
+      "Expansion of a displacement vector in terms of mode shapes with mass-orthogonality projection.",
+    variables: [
+      { symbol: "c_i", meaning: "Modal expansion coefficient", unit: "varies" },
+      { symbol: "\\vec{X}^{(i)}", meaning: "i-th mode shape", unit: "varies" },
+      { symbol: "M_{ii}", meaning: "Modal mass", unit: "kg or normalized" },
+    ],
+    assumptions: [
+      "Mode shapes form an orthogonal basis under [m]",
+      "Linear undamped modal basis",
+    ],
+    useCases: [
+      "Projecting physical displacement onto modal coordinates",
+    ],
+    notFor: [
+      "Nonlinear response bases without modal orthogonality",
+    ],
+    commonMistakes: [
+      "Using ordinary dot products instead of mass-weighted products",
+    ],
+    relatedFormulaIds: [
+      "modal-transform",
+      "eigenvalue-problem-mdof",
+    ],
+    problemTypes: [
+      "Modal analysis",
+      "Expansion theorem",
+    ],
+    tags: [
+      "Two DOF",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "mass-normalized-modal-coefficients",
+    title: "Mass-Normalized Modal Coefficients",
+    topic: "multi-dof-continuous",
+    subtopic: "Expansion theorem",
+    chapter: "Ch. 7-8",
+    latex: "c_i=\\vec{X}^{(i)T}[m]\\vec{x}(t),\\quad i=1,2,\\ldots,n",
+    explanation:
+      "Simplified modal coefficient formula when eigenvectors are mass-normalized.",
+    variables: [
+      { symbol: "c_i", meaning: "Modal coefficient", unit: "varies" },
+      { symbol: "\\vec{X}^{(i)}", meaning: "Mass-normalized mode shape", unit: "varies" },
+    ],
+    assumptions: [
+      "Mass-normalized eigenvectors",
+      "XᵀmX = 1 for each mode",
+    ],
+    useCases: [
+      "Quick projection onto normalized modal coordinates",
+    ],
+    notFor: [
+      "Unnormalized mode shapes",
+    ],
+    commonMistakes: [
+      "Using this formula when modal mass is not 1",
+    ],
+    relatedFormulaIds: [
+      "modal-expansion-theorem",
+    ],
+    problemTypes: [
+      "Modal analysis",
+    ],
+    tags: [
+      "Two DOF",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "modal-transform",
+    title: "Modal Coordinate Transformation",
+    topic: "multi-dof-continuous",
+    subtopic: "Modal analysis",
+    chapter: "Ch. 7-8",
+    latex: "\\vec{x}(t)=[X]\\vec{q}(t)",
+    explanation:
+      "Transforms modal coordinates q(t) into physical coordinates x(t).",
+    variables: [
+      { symbol: "[X]", meaning: "Modal matrix with mode shapes as columns", unit: "varies" },
+      { symbol: "\\vec{q}", meaning: "Modal coordinate vector", unit: "varies" },
+      { symbol: "\\vec{x}", meaning: "Physical coordinate vector", unit: "m" },
+    ],
+    assumptions: [
+      "Linear modal basis",
+      "Mode shapes assembled consistently",
+    ],
+    useCases: [
+      "Converting between physical and modal coordinates",
+    ],
+    notFor: [],
+    commonMistakes: [
+      "Mixing row/column convention for mode shape matrix",
+    ],
+    relatedFormulaIds: [
+      "modal-expansion-theorem",
+      "undamped-modal-response",
+      "damped-modal-response",
+    ],
+    problemTypes: [
+      "Modal analysis",
+    ],
+    tags: [
+      "Two DOF",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "undamped-modal-response",
+    title: "Undamped Modal Response with Duhamel Integral",
+    topic: "multi-dof-continuous",
+    subtopic: "Modal analysis",
+    chapter: "Ch. 7-8",
+    latex: "\\ddot{q}_i(t)+\\omega_i^2q_i(t)=Q_i(t),\\quad q_i(t)=q_i(0)\\cos\\omega_i t+\\frac{\\dot{q}_i(0)}{\\omega_i}\\sin\\omega_i t+\\frac{1}{\\omega_i}\\int_0^t Q_i(\\tau)\\sin\\omega_i(t-\\tau)\\,d\\tau",
+    explanation:
+      "Decoupled modal response for an undamped multi-DOF system with modal forcing.",
+    variables: [
+      { symbol: "q_i", meaning: "i-th modal coordinate", unit: "varies" },
+      { symbol: "Q_i", meaning: "i-th modal force", unit: "varies" },
+      { symbol: "\\omega_i", meaning: "i-th natural frequency", unit: "rad/s" },
+    ],
+    assumptions: [
+      "Undamped system",
+      "Modal coordinates are decoupled",
+    ],
+    useCases: [
+      "Solving each undamped mode independently",
+    ],
+    notFor: [
+      "Damped modal equations",
+    ],
+    commonMistakes: [
+      "Forgetting the modal force Q_i rather than physical force F_i",
+    ],
+    relatedFormulaIds: [
+      "modal-transform",
+      "damped-modal-response",
+    ],
+    problemTypes: [
+      "Modal response",
+      "Duhamel integral",
+    ],
+    tags: [
+      "Two DOF",
+      "Impulse",
+      "Forced vibration",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "damped-modal-response",
+    title: "Underdamped Modal Response",
+    topic: "multi-dof-continuous",
+    subtopic: "Modal analysis",
+    chapter: "Ch. 7-8",
+    latex: "\\ddot{q}_i+2\\zeta_i\\omega_i\\dot{q}_i+\\omega_i^2q_i=Q_i(t),\\quad q_i(t)=e^{-\\zeta_i\\omega_i t}\\left[\\cos\\omega_{di}t+\\frac{\\zeta_i}{\\sqrt{1-\\zeta_i^2}}\\sin\\omega_{di}t\\right]q_i(0)+\\frac{e^{-\\zeta_i\\omega_i t}\\sin\\omega_{di}t}{\\omega_{di}}\\dot{q}_i(0)+\\frac{1}{\\omega_{di}}\\int_0^t Q_i(\\tau)e^{-\\zeta_i\\omega_i(t-\\tau)}\\sin\\omega_{di}(t-\\tau)\\,d\\tau",
+    explanation:
+      "Decoupled underdamped modal response including initial conditions and modal forcing convolution.",
+    variables: [
+      { symbol: "q_i", meaning: "i-th modal coordinate", unit: "varies" },
+      { symbol: "\\zeta_i", meaning: "i-th modal damping ratio", unit: "—" },
+      { symbol: "\\omega_{di}", meaning: "i-th damped modal frequency", unit: "rad/s" },
+      { symbol: "Q_i", meaning: "Modal generalized force", unit: "varies" },
+    ],
+    assumptions: [
+      "Proportional damping or otherwise decoupled modal equations",
+      "ζ_i < 1",
+    ],
+    useCases: [
+      "Solving damped MDOF response mode by mode",
+    ],
+    notFor: [
+      "Non-proportional damping",
+    ],
+    commonMistakes: [
+      "Using physical force instead of modal force",
+    ],
+    relatedFormulaIds: [
+      "modal-damped-frequency",
+      "modal-damped-equations-proportional",
+    ],
+    problemTypes: [
+      "Modal response",
+      "Damped MDOF response",
+    ],
+    tags: [
+      "Damping",
+      "Impulse",
+      "Two DOF",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "modal-damped-frequency",
+    title: "Damped Modal Frequency",
+    topic: "multi-dof-continuous",
+    subtopic: "Modal analysis",
+    chapter: "Ch. 7-8",
+    latex: "\\omega_{di}=\\omega_i\\sqrt{1-\\\\zeta_i^2}",
+    explanation:
+      "Damped natural frequency of the i-th mode.",
+    variables: [
+      { symbol: "\\omega_{di}", meaning: "Damped modal frequency", unit: "rad/s" },
+      { symbol: "\\omega_i", meaning: "Undamped modal natural frequency", unit: "rad/s" },
+      { symbol: "\\zeta_i", meaning: "Modal damping ratio", unit: "—" },
+    ],
+    assumptions: [
+      "ζ_i < 1",
+    ],
+    useCases: [
+      "Computing underdamped modal response frequency",
+    ],
+    notFor: [
+      "Critically damped or overdamped modal response",
+    ],
+    commonMistakes: [
+      "Using this when ζ_i ≥ 1",
+    ],
+    relatedFormulaIds: [
+      "damped-modal-response",
+    ],
+    problemTypes: [
+      "Modal analysis",
+      "Damped response",
+    ],
+    tags: [
+      "Damping",
+      "Two DOF",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "influence-coefficients",
+    title: "Influence Coefficients",
+    topic: "multi-dof-continuous",
+    subtopic: "Influence coefficients",
+    chapter: "Ch. 7-8",
+    latex: "F_i=\\sum_{j=1}^{n}k_{ij}x_j,\\quad x_i=\\sum_{j=1}^{n}x_{ij}=\\sum_{j=1}^{n}a_{ij}F_j",
+    explanation:
+      "Influence coefficient relations between applied forces and resulting displacements.",
+    variables: [
+      { symbol: "k_{ij}", meaning: "Stiffness influence coefficient", unit: "N/m" },
+      { symbol: "a_{ij}", meaning: "Flexibility influence coefficient", unit: "m/N" },
+      { symbol: "F_j", meaning: "Applied force at coordinate j", unit: "N" },
+      { symbol: "x_i", meaning: "Displacement at coordinate i", unit: "m" },
+    ],
+    assumptions: [
+      "Linear elastic structure",
+      "Small deflection",
+    ],
+    useCases: [
+      "Building stiffness/flexibility matrices",
+      "Approximate frequency methods",
+    ],
+    notFor: [
+      "Nonlinear structures",
+    ],
+    commonMistakes: [
+      "Confusing stiffness and flexibility coefficients",
+    ],
+    relatedFormulaIds: [
+      "dunkerley-frequency-estimate",
+      "rayleigh-quotient",
+    ],
+    problemTypes: [
+      "Influence coefficients",
+      "Approximate methods",
+    ],
+    tags: [
+      "Conceptual",
+      "Two DOF",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "dunkerley-frequency-estimate",
+    title: "Dunkerley Formula for Fundamental Frequency",
+    topic: "multi-dof-continuous",
+    subtopic: "Dunkerley formula",
+    chapter: "Ch. 7-8",
+    latex: "\\frac{1}{\\omega_1^2}\\cong a_{11}m_1+a_{22}m_2+\\cdots+a_{nn}m_n,\\quad \\frac{1}{\\omega_1^2}\\cong\\frac{1}{\\omega_{1n}^2}+\\frac{1}{\\omega_{2n}^2}+\\cdots+\\frac{1}{\\omega_{nn}^2},\\quad \\omega_{in}=\\sqrt{\\frac{1}{a_{ii}m_i}}=\\sqrt{\\frac{k_{ii}}{m_i}}",
+    explanation:
+      "Dunkerley approximation for estimating the fundamental natural frequency from influence coefficients or individual natural frequencies.",
+    variables: [
+      { symbol: "\\omega_1", meaning: "Approximate fundamental frequency", unit: "rad/s" },
+      { symbol: "a_{ii}", meaning: "Flexibility influence coefficient", unit: "m/N" },
+      { symbol: "m_i", meaning: "Lumped mass", unit: "kg" },
+      { symbol: "\\omega_{in}", meaning: "Frequency contribution for mass i", unit: "rad/s" },
+    ],
+    assumptions: [
+      "Linear system",
+      "Approximate fundamental-mode estimate",
+    ],
+    useCases: [
+      "Quick lower-bound style estimate of first natural frequency",
+    ],
+    notFor: [
+      "Exact modal analysis when high accuracy is required",
+    ],
+    commonMistakes: [
+      "Treating Dunkerley as exact",
+    ],
+    relatedFormulaIds: [
+      "influence-coefficients",
+      "rayleigh-quotient",
+    ],
+    problemTypes: [
+      "Approximate methods",
+      "Dunkerley formula",
+    ],
+    tags: [
+      "Two DOF",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "rayleigh-quotient",
+    title: "Rayleigh Quotient",
+    topic: "multi-dof-continuous",
+    subtopic: "Rayleigh method",
+    chapter: "Ch. 7-8",
+    latex: "\\omega^2=\\frac{\\vec{X}^T[k]\\vec{X}}{\\vec{X}^T[m]\\vec{X}}=R(\\vec{X})",
+    explanation:
+      "Rayleigh quotient estimates natural frequency from an assumed mode shape vector.",
+    variables: [
+      { symbol: "R(\\vec{X})", meaning: "Rayleigh quotient", unit: "rad²/s²" },
+      { symbol: "\\vec{X}", meaning: "Assumed mode shape vector", unit: "varies" },
+      { symbol: "[k],[m]", meaning: "Stiffness and mass matrices", unit: "various" },
+    ],
+    assumptions: [
+      "Linear undamped system",
+      "Assumed mode shape is compatible with constraints",
+    ],
+    useCases: [
+      "Approximate natural frequency calculation",
+      "Checking trial shapes",
+    ],
+    notFor: [
+      "Forced response amplitude calculations",
+    ],
+    commonMistakes: [
+      "Using an incompatible assumed shape",
+    ],
+    relatedFormulaIds: [
+      "rayleigh-quotient-modal-expansion",
+      "shaft-critical-speed",
+    ],
+    problemTypes: [
+      "Rayleigh method",
+      "Approximate methods",
+    ],
+    tags: [
+      "Two DOF",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "rayleigh-quotient-modal-expansion",
+    title: "Rayleigh Quotient in Modal Coordinates",
+    topic: "multi-dof-continuous",
+    subtopic: "Rayleigh method",
+    chapter: "Ch. 7-8",
+    latex: "R(\\vec{X})=\\frac{c_1^2\\omega_1^2\\vec{X}^{(1)T}[m]\\vec{X}^{(1)}+c_2^2\\omega_2^2\\vec{X}^{(2)T}[m]\\vec{X}^{(2)}+\\cdots}{c_1^2\\vec{X}^{(1)T}[m]\\vec{X}^{(1)}+c_2^2\\vec{X}^{(2)T}[m]\\vec{X}^{(2)}+\\cdots}",
+    explanation:
+      "Rayleigh quotient expressed using exact modal components, showing why an assumed shape close to one mode gives a second-order frequency error.",
+    variables: [
+      { symbol: "c_i", meaning: "Modal content coefficient", unit: "varies" },
+      { symbol: "\\omega_i", meaning: "Exact modal frequency", unit: "rad/s" },
+    ],
+    assumptions: [
+      "Expansion in exact mode shapes",
+      "Linear undamped system",
+    ],
+    useCases: [
+      "Understanding Rayleigh method accuracy",
+    ],
+    notFor: [
+      "Direct formula selection for SDOF response",
+    ],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "rayleigh-quotient",
+      "mass-normalized-rayleigh-quotient",
+    ],
+    problemTypes: [
+      "Rayleigh method",
+      "Approximate methods",
+    ],
+    tags: [
+      "Two DOF",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "mass-normalized-rayleigh-quotient",
+    title: "Mass-Normalized Rayleigh Quotient",
+    topic: "multi-dof-continuous",
+    subtopic: "Rayleigh method",
+    chapter: "Ch. 7-8",
+    latex: "R(\\vec{X})=\\frac{c_1^2\\omega_1^2+c_2^2\\omega_2^2+\\cdots}{c_1^2+c_2^2+\\cdots},\\quad \\left|\\frac{c_i}{c_r}\\right|=\\epsilon_i\\ll1,\\quad R(\\vec{X})=\\omega_r^2\\{1+O(\\epsilon^2)\\}",
+    explanation:
+      "Mass-normalized form of the Rayleigh quotient and its second-order error property near an exact mode.",
+    variables: [
+      { symbol: "c_i", meaning: "Modal coefficient", unit: "varies" },
+      { symbol: "\\epsilon_i", meaning: "Small modal contamination ratio", unit: "—" },
+    ],
+    assumptions: [
+      "Mass-normalized eigenvectors",
+      "Assumed shape close to one exact mode",
+    ],
+    useCases: [
+      "Interpreting Rayleigh method accuracy",
+    ],
+    notFor: [],
+    commonMistakes: [],
+    relatedFormulaIds: [
+      "rayleigh-quotient-modal-expansion",
+    ],
+    problemTypes: [
+      "Rayleigh method",
+      "Approximate methods",
+    ],
+    tags: [
+      "Two DOF",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
+  },
+  {
+    id: "shaft-critical-speed",
+    title: "Shaft Critical Speed Estimate",
+    topic: "multi-dof-continuous",
+    subtopic: "Rayleigh method",
+    chapter: "Ch. 7-8",
+    latex: "\\omega\\ \\text{(rpm)}=\\frac{30}{\\pi}\\left(\\frac{g}{\\delta_{st}}\\right)^{1/2}",
+    explanation:
+      "Course-sheet shaft critical speed estimate from static deflection, expressed in rpm.",
+    variables: [
+      { symbol: "\\omega", meaning: "Critical speed", unit: "rpm" },
+      { symbol: "g", meaning: "Gravitational acceleration", unit: "m/s²" },
+      { symbol: "\\delta_{st}", meaning: "Static deflection", unit: "m" },
+    ],
+    assumptions: [
+      "Static deflection method",
+      "Small deflection",
+      "Consistent units",
+    ],
+    useCases: [
+      "Estimating shaft critical speed from static sag/deflection",
+    ],
+    notFor: [
+      "Detailed rotor dynamics with gyroscopic effects",
+    ],
+    commonMistakes: [
+      "Mixing rad/s and rpm units",
+    ],
+    relatedFormulaIds: [
+      "rayleigh-quotient",
+    ],
+    problemTypes: [
+      "Critical speed",
+      "Approximate methods",
+    ],
+    tags: [
+      "Equivalent systems",
+      "Conceptual",
+    ],
+    source: [{ sheet: "Final Exam formula sheet" }],
   },
   {
     id: "equivalent-mass-distributed-member-coefficients",
@@ -2523,7 +3254,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "rotational-translational-equivalence",
@@ -2565,7 +3296,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "lever-equivalent-masses",
@@ -2605,7 +3336,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "inertia-solid-disk",
@@ -2641,7 +3372,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "inertia-thin-ring",
@@ -2676,7 +3407,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "inertia-solid-sphere",
@@ -2711,7 +3442,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "inertia-thin-spherical-shell",
@@ -2747,7 +3478,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Midterm formula sheet", page: 6 }],
+    source: [{ sheet: "Midterm formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "inertia-slender-rod-end",
@@ -2782,7 +3513,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "inertia-rectangular-plate",
@@ -2817,7 +3548,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }],
+    source: [{ sheet: "Quiz 2 formula sheet", page: 10 }, { sheet: "Midterm formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "inertia-slender-rod-centroid",
@@ -2854,7 +3585,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Midterm formula sheet", page: 6 }],
+    source: [{ sheet: "Midterm formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "parallel-axis-theorem-inertia-form",
@@ -2897,7 +3628,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "Conceptual",
     ],
-    source: [{ sheet: "Midterm formula sheet", page: 6 }],
+    source: [{ sheet: "Midterm formula sheet", page: 6 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "axial-member-stiffness",
@@ -2936,7 +3667,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "sheet-circular-section-axial-stiffness",
@@ -2974,7 +3705,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "helical-spring-stiffness",
@@ -3014,7 +3745,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "beam-stiffness-fixed-guided",
@@ -3054,7 +3785,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 4 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "hollow-shaft-torsional-stiffness",
@@ -3094,7 +3825,7 @@ export const formulas: FormulaEntry[] = [
       "Equivalent systems",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "viscous-shear-damper",
@@ -3135,7 +3866,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "viscous-damper-annular-geometry",
@@ -3175,7 +3906,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "viscous-damper-composite-film",
@@ -3215,7 +3946,7 @@ export const formulas: FormulaEntry[] = [
       "Damping",
       "SDOF",
     ],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "springs-series",
@@ -3237,7 +3968,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["springs-parallel", "natural-frequency"],
     problemTypes: ["Equivalent stiffness"],
     tags: ["Equivalent systems", "SDOF"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "springs-parallel",
@@ -3259,7 +3990,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["springs-series", "natural-frequency"],
     problemTypes: ["Equivalent stiffness"],
     tags: ["Equivalent systems", "SDOF"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 2 }, { sheet: "Midterm formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "beam-stiffness-cantilever",
@@ -3283,7 +4014,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["beam-stiffness-simply-supported", "natural-frequency"],
     problemTypes: ["Beam equivalent stiffness"],
     tags: ["Equivalent systems", "SDOF"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
   {
     id: "beam-stiffness-simply-supported",
@@ -3307,7 +4038,7 @@ export const formulas: FormulaEntry[] = [
     relatedFormulaIds: ["beam-stiffness-cantilever", "natural-frequency"],
     problemTypes: ["Beam equivalent stiffness"],
     tags: ["Equivalent systems", "SDOF"],
-    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }],
+    source: [{ sheet: "Quiz 1 formula sheet", page: 3 }, { sheet: "Midterm formula sheet", page: 5 }, { sheet: "Final Exam formula sheet" }],
   },
 ];
 

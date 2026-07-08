@@ -165,7 +165,13 @@ export const courseTopics: CourseTopic[] = [
       "Matrix formulation, modal analysis, approximate methods, and beam vibration overview.",
     subtopics: [
       "Matrix formulation",
+      "Lagrange equations",
+      "Eigenvalue problem",
+      "Expansion theorem",
       "Modal analysis",
+      "Influence coefficients",
+      "Dunkerley formula",
+      "Rayleigh method",
       "Approximate methods",
       "Beam vibration overview",
     ],
